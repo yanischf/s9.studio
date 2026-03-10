@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Calendar, MapPin, ArrowRight, Mail, Sparkles } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight, Mail, Sparkles, Archive } from 'lucide-react';
 import { EVENTS } from '../constants';
 
 const Events: React.FC = () => {
@@ -14,6 +14,9 @@ const Events: React.FC = () => {
       setEmail('');
     }
   };
+
+  const upcomingEvents = EVENTS.filter(e => !e.isPast);
+  const pastEvents = EVENTS.filter(e => e.isPast);
 
   return (
     <div className="pt-24 bg-surface dark:bg-black">
@@ -36,7 +39,35 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* EVENTS GRID (01) */}
+      {/* LUMA BANNER */}
+      <section className="container mx-auto px-6 mb-8">
+        <a 
+          href="https://luma.com/user/usr-vYjvChFrxrfPsDn" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group block bg-black dark:bg-white text-white dark:text-black rounded-3xl md:rounded-full py-6 px-8 hover:scale-[1.01] transition-all shadow-xl relative overflow-hidden"
+        >
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/10 dark:bg-black/10 flex items-center justify-center">
+                <Sparkles size={16} className="animate-pulse" />
+              </div>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
+                Nouveaux événements à venir
+              </p>
+            </div>
+            <p className="text-sm md:text-base font-medium italic opacity-80">
+              Suivez notre page officielle pour être informé en priorité.
+            </p>
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest bg-white/20 dark:bg-black/20 px-4 py-2 rounded-full group-hover:bg-white/30 dark:group-hover:bg-black/30 transition-colors">
+              S'abonner sur Luma <ArrowRight size={14} />
+            </div>
+          </div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+        </a>
+      </section>
+
+      {/* UPCOMING EVENTS GRID (01) */}
       <section className="container mx-auto px-6 py-32">
         <div className="flex justify-between items-end mb-16">
           <div className="space-y-4">
@@ -47,7 +78,7 @@ const Events: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
-          {EVENTS.map((event) => (
+          {upcomingEvents.map((event) => (
             <div 
               key={event.id}
               className="group bg-white dark:bg-neutral-950 border border-gray-100 dark:border-neutral-900 rounded-[3rem] p-10 md:p-14 hover:border-black dark:hover:border-white transition-all relative overflow-hidden"
@@ -72,22 +103,68 @@ const Events: React.FC = () => {
                   {event.description}
                 </p>
                 
-                <button className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest group-hover:gap-6 transition-all">
-                  Réserver ma place <ArrowRight size={16} />
-                </button>
+                <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted">
+                  Détails à venir
+                </div>
               </div>
               <Sparkles className="absolute -right-10 -bottom-10 w-40 h-40 text-surface dark:text-neutral-900/50 group-hover:rotate-12 transition-transform" />
             </div>
           ))}
+          {upcomingEvents.length === 0 && (
+            <p className="text-muted italic">Pas de sessions prévues pour le moment.</p>
+          )}
         </div>
 
-        {/* NEWSLETTER (02) */}
+        {/* PAST EVENTS GRID (02) - MODIFIED TO MATCH SIZE OF UPCOMING */}
+        <div className="flex justify-between items-end mb-16 pt-20 border-t border-gray-100 dark:border-neutral-900">
+          <div className="space-y-4">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Archives</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Événements passés</h2>
+          </div>
+          <div className="text-[10px] font-bold text-muted uppercase tracking-widest">(02)</div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
+          {pastEvents.map((event) => (
+            <div 
+              key={event.id}
+              className="group bg-surface dark:bg-neutral-900/30 border border-gray-100 dark:border-neutral-900 rounded-[3rem] p-10 md:p-14 opacity-75 hover:opacity-100 transition-all relative overflow-hidden"
+            >
+              <div className="space-y-8 relative z-10">
+                <div className="flex items-center gap-6">
+                   <div className="w-16 h-16 rounded-full bg-white dark:bg-neutral-900 flex items-center justify-center text-muted">
+                      <Archive size={24} />
+                   </div>
+                   <div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted block mb-1">{event.date}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted flex items-center gap-1">
+                        <MapPin size={10} /> {event.location}
+                      </span>
+                   </div>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-bold tracking-tighter">
+                  {event.title}
+                </h3>
+                <p className="text-muted leading-relaxed max-w-md italic">
+                  {event.description}
+                </p>
+                
+                <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted">
+                  Session terminée
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* NEWSLETTER (03) */}
         <section className="bg-black text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
             <div className="space-y-8">
               <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted block">Newsletter</span>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">Restez à l'écoute.</h2>
-              <div className="text-[10px] font-bold text-muted uppercase tracking-widest">(02)</div>
+              <div className="text-[10px] font-bold text-muted uppercase tracking-widest">(03)</div>
             </div>
             
             <div className="space-y-8">

@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
         <nav className="flex items-center gap-8">
           <Link to="/about" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Manifeste</Link>
           <Link to="/unique-offer" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">L'Offre</Link>
-          <Link to="/contact" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Contact</Link>
+          <a href="mailto:meet.section9@gmail.com" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Contact</a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">LinkedIn</a>
         </nav>
       </div>

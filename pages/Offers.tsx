@@ -81,12 +81,12 @@ const Offers: React.FC = () => {
               Une demande spécifique ? Parlons-en.
             </h2>
             <div className="flex justify-center">
-              <Link 
-                to="/contact" 
+              <a 
+                href="mailto:meet.section9@gmail.com" 
                 className="group flex items-center gap-6 px-10 py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
               >
                 Nous contacter <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">

@@ -188,12 +188,12 @@ const ToolkitDetail: React.FC = () => {
       {/* 5. CTA SECTION */}
       <section className="container mx-auto px-6 py-20 pb-40 text-center">
         <h3 className="text-2xl font-bold mb-12">Besoin d'un accompagnement pour animer ce protocole ?</h3>
-        <Link 
-          to="/contact" 
+        <a 
+          href="mailto:meet.section9@gmail.com" 
           className="group inline-flex items-center gap-6 px-12 py-6 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform"
         >
           Discuter avec le studio <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-        </Link>
+        </a>
       </section>
     </div>
   );

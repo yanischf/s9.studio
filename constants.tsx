@@ -171,11 +171,20 @@ export const VALUES: Value[] = [
 
 export const EVENTS: EventItem[] = [
   {
-    id: '1',
+    id: '2',
     title: 'Masterclass: Systèmes & Rituels',
-    date: '15 Mai 2024',
-    location: 'Paris & Online',
-    description: 'Une plongée dans le design des conditions propices à la créativité d\'équipe.'
+    date: 'TBA',
+    location: 'Paris',
+    description: 'Une plongée dans le design des conditions propices à la créativité d\'équipe. Session en physique.',
+    isPast: false
+  },
+  {
+    id: '1',
+    title: 'Meta-Design #1. Concevoir les conditions du design',
+    date: 'Jeudi 4 Décembre 2025 — 18:30',
+    location: 'Le Hasard Ludique, Paris',
+    description: 'Premier volet de nos rencontres sur les fondements du meta-design et la structuration des environnements créatifs.',
+    isPast: true
   }
 ];
 

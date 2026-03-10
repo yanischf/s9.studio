@@ -12,6 +12,7 @@ import OfferDetail from './pages/OfferDetail';
 import MetaDesignToolkit from './pages/MetaDesignToolkit';
 import ToolkitDetail from './pages/ToolkitDetail';
 import UniqueOffer from './pages/UniqueOffer';
+import UniqueOfferV2 from './pages/UniqueOfferV2';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,6 +40,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/unique-offer" element={<UniqueOffer />} />
+            <Route path="/unique-offer-v2" element={<UniqueOfferV2 />} />
             <Route path="/offres" element={<Offers />} />
             <Route path="/toolkit" element={<MetaDesignToolkit />} />
             <Route path="/toolkit/:id" element={<ToolkitDetail />} />

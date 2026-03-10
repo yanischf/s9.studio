@@ -21,7 +21,7 @@ const Header: React.FC = () => {
 
         <nav className="hidden md:flex items-center gap-8">
           <NavLink 
-            to="/unique-offer"
+            to="/unique-offer-v2"
             className={({ isActive }) => 
               `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
             }
@@ -53,24 +53,15 @@ const Header: React.FC = () => {
               `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
             }
           >
-            EVENTS
+            Évènements
           </NavLink>
-          
-          {/* <NavLink 
-            to="/contact" 
-            className={({ isActive }) => 
-              `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
-            }
-          >
-            CONTACTS
-          </NavLink> */}
 
-          <Link 
-            to="/contact" 
+          <a 
+            href="mailto:meet.section9@gmail.com" 
             className="group ml-4 px-6 py-2.5 bg-black text-white rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-all flex items-center gap-3 shadow-lg shadow-black/5"
           >
-            INTÉGRER MON LAB <Zap size={12} className="group-hover:fill-current transition-all" />
-          </Link>
+            CONTACTER S9 <Zap size={12} className="group-hover:fill-current transition-all" />
+          </a>
         </nav>
 
         <div className="flex items-center gap-6 md:hidden">
@@ -82,14 +73,14 @@ const Header: React.FC = () => {
       
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200 p-8 flex flex-col gap-8 animate-in fade-in slide-in-from-top-2 max-h-[85vh] overflow-y-auto">
-          <Link to="/contact" className="group w-full p-6 bg-black text-white rounded-[2rem] text-xl font-bold uppercase tracking-widest flex justify-between items-center" onClick={() => setIsMobileMenuOpen(false)}>
-            INTÉGRER MON LAB <Zap size={20} />
-          </Link>
-          <Link to="/unique-offer" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>L'OFFRE</Link>
+          <a href="mailto:meet.section9@gmail.com" className="group w-full p-6 bg-black text-white rounded-[2rem] text-xl font-bold uppercase tracking-widest flex justify-between items-center" onClick={() => setIsMobileMenuOpen(false)}>
+            CONTACTER S9 <Zap size={20} />
+          </a>
+          <Link to="/unique-offer-v2" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>L'OFFRE</Link>
           <Link to="/toolkit" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>TOOLKIT</Link>
           <Link to="/about" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>MANIFESTE</Link>
-          <Link to="/events" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>EVENTS</Link>
-          <Link to="/contact" className="text-3xl font-bold tracking-tighter underline underline-offset-8" onClick={() => setIsMobileMenuOpen(false)}>CONTACTS</Link>
+          <Link to="/events" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>Évènements</Link>
+          <a href="mailto:meet.section9@gmail.com" className="text-3xl font-bold tracking-tighter underline underline-offset-8" onClick={() => setIsMobileMenuOpen(false)}>CONTACTS</a>
         </div>
       )}
     </header>

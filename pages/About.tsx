@@ -98,13 +98,13 @@ const About: React.FC = () => {
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight max-w-4xl mx-auto">
               Prêt à concevoir les conditions de votre réussite ?
             </h2>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Link 
-                to="/contact" 
+            <div className="flex justify-center">
+              <a 
+                href="mailto:meet.section9@gmail.com" 
                 className="group flex items-center gap-6 px-10 py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform mx-auto"
               >
                 Contactez S9 <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center select-none">

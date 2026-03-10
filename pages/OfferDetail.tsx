@@ -103,13 +103,13 @@ const OfferDetail: React.FC = () => {
               </div>
 
               <div className="pt-8 border-t border-white/10">
-                <Link 
-                  to="/contact" 
+                <a 
+                  href="mailto:meet.section9@gmail.com" 
                   className="group flex flex-col items-center gap-4 w-full py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:scale-[1.02] transition-transform px-8 text-center"
                 >
                   <span className="text-xs leading-snug">{offer.cta || 'Démarrer'}</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>

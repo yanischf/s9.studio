@@ -18,6 +18,7 @@ export interface EventItem {
   date: string;
   location: string;
   description: string;
+  isPast?: boolean;
 }
 
 export interface Value {

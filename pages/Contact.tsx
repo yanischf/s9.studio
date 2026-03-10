@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
 
             <div className="space-y-10">
               {[
-                { icon: <Mail size={20} />, label: "Email", value: "hello@studio-s9.com", link: "mailto:hello@studio-s9.com" },
+                { icon: <Mail size={20} />, label: "Email", value: "meet.section9@gmail.com", link: "mailto:meet.section9@gmail.com" },
                 { icon: <Phone size={20} />, label: "Téléphone", value: "+33 (0)1 23 45 67 89", link: "tel:+33123456789" },
                 { icon: <MapPin size={20} />, label: "Adresse", value: "123 Avenue du Design, 75011 Paris", link: "#" }
               ].map((item, idx) => (

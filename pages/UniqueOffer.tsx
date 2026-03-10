@@ -40,12 +40,12 @@ const UniqueOffer: React.FC = () => {
               </div>
               
               <div className="flex flex-wrap gap-6 pt-4">
-                <Link 
-                  to="/contact" 
+                <a 
+                  href="mailto:meet.section9@gmail.com" 
                   className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-xl hover:shadow-black/20"
                 >
                   RÉSERVER MON DIAGNOSTIC <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -73,9 +73,9 @@ const UniqueOffer: React.FC = () => {
               </div>
               
               <div className="pt-8">
-                <Link to="/contact" className="group inline-flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black/10 pb-2 hover:border-black transition-all">
+                <a href="mailto:meet.section9@gmail.com" className="group inline-flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black/10 pb-2 hover:border-black transition-all">
                   IDENTIFIER MES BLOCAGES STRUCTURELS <Search size={16} className="group-hover:translate-y-1 transition-transform" />
-                </Link>
+                </a>
               </div>
             </div>
             
@@ -205,9 +205,9 @@ const UniqueOffer: React.FC = () => {
         </div>
 
         <div className="flex justify-center">
-          <Link to="/contact" className="group flex items-center gap-6 px-12 py-6 bg-black text-white rounded-full font-bold uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-xl">
+          <a href="mailto:meet.section9@gmail.com" className="group flex items-center gap-6 px-12 py-6 bg-black text-white rounded-full font-bold uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-xl">
             CONFIGURER MON LAB NATIF <Settings size={20} className="group-hover:rotate-90 transition-transform duration-500" />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -255,9 +255,9 @@ const UniqueOffer: React.FC = () => {
           </div>
 
           <div className="flex justify-center">
-            <Link to="/contact" className="group flex items-center gap-6 px-10 py-5 border-2 border-black rounded-full font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">
+            <a href="mailto:meet.section9@gmail.com" className="group flex items-center gap-6 px-10 py-5 border-2 border-black rounded-full font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">
               PLANIFIER L'INSTALLATION <Calendar size={18} className="group-hover:scale-110 transition-transform" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -286,13 +286,13 @@ const UniqueOffer: React.FC = () => {
             <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed italic">
               L'innovation souveraine ne commence pas par une idée, mais par un environnement de travail. Discutons de la configuration de votre futur Lab Natif.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
-              <Link 
-                to="/contact" 
+            <div className="flex justify-center pt-8">
+              <a 
+                href="mailto:meet.section9@gmail.com" 
                 className="group flex items-center justify-center gap-6 px-12 py-6 bg-white text-black rounded-full font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform"
               >
                 Demander une session stratégique <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
+              </a>
             </div>
             <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted">
               <ShieldCheck className="inline-block mr-2" size={14} /> Diagnostic d'infrastructure offert

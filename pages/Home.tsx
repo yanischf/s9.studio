@@ -12,7 +12,15 @@ import {
   Box,
   Maximize,
   Cpu,
-  ShieldCheck
+  ShieldCheck,
+  AlertTriangle,
+  Clock,
+  Coins,
+  UserMinus,
+  TrendingUp,
+  Flame,
+  FastForward,
+  Shield
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -31,18 +39,18 @@ const Home: React.FC = () => {
 
           <div className="md:col-span-8 text-right relative">
             <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-extrabold tracking-tighter leading-[0.85] text-balance mb-12 text-black">
-              L'émergence par le cadre
+              Ne gérez plus l'innovation. Installez-la.
             </h1>
 
             <div className="space-y-8 max-w-2xl ml-auto mb-12">
               <p className="text-xl md:text-2xl text-[#8E9AAF] font-medium leading-relaxed italic">
-                Nous concevons les environnements, méthodes et dynamiques collectives qui permettent au design et à l'innovation d'émerger durablement.
-              </p>
+                Nous transformons votre structure en moteur d’innovation autonome pour libérer 15h de votre temps hebdomadaire grâce au déploiement du Lab Natif.
+                </p>
             </div>
 
             <div className="flex justify-end gap-6 items-center">
               <Link 
-                to="/unique-offer" 
+                to="/unique-offer-v2" 
                 className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
               >
                 DÉCOUVRIR LE LAB NATIF <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
@@ -61,36 +69,101 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. CE QUE NOUS FAISONS */}
-      <section className="container mx-auto px-6 py-32 border-b border-gray-100">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
-          <div className="md:col-span-5">
-             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">La Mission</span>
-             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-[1.1]">Créer les conditions avant de créer les solutions</h2>
-          </div>
-          <div className="md:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
+      {/* 2. LE CONSTAT (MIROIR DES DOULEURS) */}
+      <section className="bg-black text-white py-32 mt-20 rounded-[4rem] mx-4 md:mx-10 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-5 space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400">
+                <AlertTriangle size={14} className="text-white" /> Le Constat
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
+                Votre entreprise est lente parce que tout dépend de vous.
+              </h2>
+              <p className="text-xl text-gray-400 leading-relaxed font-light italic">
+                Vous êtes le goulot d'étranglement de votre propre croissance. Sans système dédié, chaque projet finit sur votre bureau, vos idées stagnent et vos talents s'essoufflent.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-1 gap-6">
               {[
-                { title: "Structurer les environnements d'innovation", desc: "Mettre en place des méthodes et des dispositifs clairs pour créer, tester et décider efficacement.", icon: <Layers size={24} /> },
-                { title: "Activer l’intelligence collective", desc: "Faire émerger des idées actionnables grâce à la collaboration et au prototypage.", icon: <Workflow size={24} /> },
-                { title: "Aligner les équipes et les expertises", desc: "Créer un langage commun entre design, tech, stratégie et métiers.", icon: <Users size={24} /> },
-                { title: "Transformer les intentions", desc: "Passer de la vision abstraite à des projets concrets et opérationnels.", icon: <Target size={24} /> }
+                {
+                  title: "Time-to-market à l'arrêt",
+                  desc: "Vos offres sortent trop tard, la concurrence prend l'avance.",
+                  icon: <Clock size={24} />,
+                  leak: "Retard Stratégique"
+                },
+                {
+                  title: "Rente Prestataire",
+                  desc: "Vous payez l'extérieur pour ce que vous devriez maîtriser en interne.",
+                  icon: <Coins size={24} />,
+                  leak: "Dépendance Financière"
+                },
+                {
+                  title: "L’Omniprésence forcée",
+                  desc: "Si vous n'êtes pas là, rien ne bouge. Votre temps de cerveau est gaspillé dans l'opérationnel.",
+                  icon: <UserMinus size={24} />,
+                  leak: "Épuisement du Leader"
+                }
               ].map((item, i) => (
-                <div key={i} className="space-y-4 group">
-                  <div className="text-black group-hover:scale-110 transition-transform origin-left">
+                <div key={i} className="group p-8 md:p-12 rounded-[2.5rem] bg-white/5 border border-white/10 hover:border-white/30 transition-all flex flex-col md:flex-row gap-8 items-start">
+                  <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
+                      <span className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white text-black rounded-full">{item.leak}</span>
+                    </div>
+                    <p className="text-gray-400 leading-relaxed italic">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+        
+        {/* Decorative background element */}
+        <div className="absolute -bottom-20 -right-20 opacity-10 pointer-events-none select-none">
+          <span className="font-logo text-[40vw] font-black leading-none">§</span>
+        </div>
       </section>
 
-      {/* 3. LES DYNAMIQUES CLÉS */}
-      <section className="container mx-auto px-6 py-32">
+      {/* 2.5 LA MUTATION */}
+      <section className="container mx-auto px-6 py-40 bg-surface">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-8 space-y-12">
+            <div className="space-y-4">
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted flex items-center gap-3">
+                <TrendingUp size={14} /> La Mutation
+              </span>
+              <h2 className="text-5xl md:text-[6rem] font-bold tracking-tighter leading-[0.9] text-black">
+                Passez de l'impulsion individuelle à la performance collective.
+              </h2>
+            </div>
+            
+            <div className="max-w-3xl space-y-8">
+              <p className="text-2xl md:text-3xl text-muted font-light leading-relaxed italic">
+                Votre expertise mérite une infrastructure à sa mesure. <span className="text-black font-bold">Section9 n'ajoute pas de manager</span>, elle installe une capacité de création permanente. Vous ne cherchez plus l'innovation : <span className="underline decoration-black/20 underline-offset-8">vous la produisez.</span>
+              </p>
+            </div>
+          </div>
+          
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+             <div className="relative">
+                <div className="w-64 h-64 rounded-full border border-gray-200 flex items-center justify-center animate-pulse">
+                   <span className="font-logo text-9xl font-black">§</span>
+                </div>
+                <div className="absolute -top-4 -right-4 bg-black text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  OS V1.0
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. LES DYNAMIQUES CLÉS */}
+      <section className="container mx-auto px-6 py-32 border-t border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           <div className="lg:col-span-6 order-2 lg:order-1">
             <div className="grid grid-cols-2 gap-4">
@@ -116,8 +189,10 @@ const Home: React.FC = () => {
           
           <div className="lg:col-span-6 order-1 lg:order-2 space-y-12">
             <div className="space-y-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">03 — Dynamiques Clés</span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">Les dynamiques clés du méta-design chez S9</h2>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted flex items-center gap-2">
+                <Zap size={12} /> Dynamiques Clés
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">Les dynamiques de votre transformation</h2>
               <p className="text-lg text-muted font-light">Notre expertise repose sur 4 dynamiques fondamentales</p>
             </div>
             
@@ -164,7 +239,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. NOTRE UNIQUE OFFRE */}
+      {/* 5. NOTRE UNIQUE OFFRE */}
       <section className="container mx-auto px-6 py-32 bg-surface rounded-[5rem]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10">
@@ -196,7 +271,7 @@ const Home: React.FC = () => {
 
             <div className="pt-6">
               <Link 
-                to="/unique-offer" 
+                to="/unique-offer-v2" 
                 className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform w-fit shadow-xl"
               >
                 DÉCOUVRIR LE LAB NATIF <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
@@ -223,27 +298,46 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. À QUI NOUS NOUS ADRESSONS */}
+      {/* 6. À QUI NOUS NOUS ADRESSONS (EST-CE POUR VOUS ?) */}
       <section className="container mx-auto px-6 py-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-5 sticky top-32">
-             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">Cibles</span>
-             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-none mb-8">À qui nous nous adressons</h2>
-             <p className="text-xl text-muted font-light leading-relaxed">
-               Partout où il est nécessaire de mieux travailler ensemble pour mieux concevoir.
+          <div className="md:col-span-5 lg:sticky lg:top-32">
+             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">Qualification</span>
+             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-none mb-8">Est-ce pour vous ?</h2>
+             <p className="text-xl text-muted font-light leading-relaxed max-w-sm">
+               Le Lab Natif est conçu pour les leaders qui veulent transformer leur expertise en infrastructure autonome.
              </p>
           </div>
-          <div className="md:col-span-7 space-y-4">
+          <div className="md:col-span-7 space-y-6">
              {[
-               "Entreprises et organisations",
-               "Collectivités et institutions publiques",
-               "Structures culturelles, éducatives et hybrides",
-               "Équipes projet confrontées à la complexité"
-             ].map((target, idx) => (
-               <div key={idx} className="group p-10 border border-gray-100 rounded-[2.5rem] bg-white hover:border-black transition-all flex justify-between items-center">
-                  <h3 className="text-2xl font-bold tracking-tighter">{target}</h3>
-                  <div className="w-10 h-10 rounded-full bg-surface flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <CheckCircle2 size={20} className="text-black" />
+               {
+                 title: "Le Dirigeant « Pompier »",
+                 desc: "L'innovation ne repose que sur votre énergie. Sans votre validation constante, rien ne sort. Vous voulez récupérer votre temps.",
+                 icon: <Flame size={24} />
+               },
+               {
+                 title: "L’Expert « Freiné »",
+                 desc: "Vous avez les idées, mais votre structure est trop lente. Vous en avez assez de voir la concurrence vous rattraper par simple vitesse.",
+                 icon: <FastForward size={24} />
+               },
+               {
+                 title: "Le Bâtisseur « Souverain »",
+                 desc: "Vous refusez la dépendance aux agences externes. Vous voulez que la capacité de créer soit un actif permanent de votre entreprise.",
+                 icon: <Shield size={24} />
+               }
+             ].map((persona, idx) => (
+               <div key={idx} className="group p-10 border border-gray-100 rounded-[2.5rem] bg-white hover:border-black transition-all space-y-6">
+                  <div className="flex justify-between items-start">
+                    <div className="w-14 h-14 rounded-2xl bg-surface flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all">
+                      {persona.icon}
+                    </div>
+                    <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <CheckCircle2 size={16} className="text-black" />
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold tracking-tighter">{persona.title}</h3>
+                    <p className="text-lg text-muted italic leading-relaxed">{persona.desc}</p>
                   </div>
                </div>
              ))}
@@ -251,7 +345,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. NOTRE POSTURE */}
+      {/* 7. NOTRE POSTURE */}
       <section className="bg-black text-white py-40 relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -279,26 +373,28 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. CTA FINAL */}
+      {/* 8. CTA FINAL */}
       <section className="container mx-auto px-6 py-20 pb-32">
         <div className="bg-white rounded-[4rem] p-12 md:p-32 text-center border border-gray-100 shadow-2xl relative overflow-hidden">
           <div className="relative z-10 space-y-12">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight max-w-4xl mx-auto">
-              Vous souhaitez créer un environnement plus propice à la conception ?
+              Et si votre entreprise innovait enfin sans vous ?
             </h2>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Link 
-                to="/contact" 
+            <div className="flex flex-wrap justify-center gap-6">
+              <a 
+                href="mailto:meet.section9@gmail.com" 
                 className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
               >
                 Contactez S9 <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-              <Link 
-                to="/contact" 
-                className="group flex items-center gap-6 px-10 py-5 bg-surface text-black rounded-full font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors"
+              </a>
+              <a 
+                href="https://calendly.com/meet-section9/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-6 px-10 py-5 border-2 border-black text-black rounded-full font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all"
               >
-                Discutons de vos enjeux <ArrowRight size={20} />
-              </Link>
+                Prendre un rendez-vous <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+              </a>
             </div>
           </div>
           <div className="absolute -bottom-20 -right-20 w-[40vw] h-[40vw] bg-gray-50 rounded-full blur-[100px] opacity-30"></div>

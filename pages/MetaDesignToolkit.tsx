@@ -38,7 +38,7 @@ const MetaDesignToolkit: React.FC = () => {
           </div>
           <div className="md:col-span-8 text-right">
             <h1 className="font-display text-4xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance mb-8">
-              MetaDesign <span className="italic">ToolKit</span>.
+              Ressources & <span className="italic">Toolkit</span>
             </h1>
             <p className="text-lg md:text-xl text-muted font-light max-w-2xl ml-auto leading-relaxed italic">
               Explorez les outils que nous utilisons pour structurer les cadres de la création.
@@ -137,40 +137,40 @@ const MetaDesignToolkit: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. ACCESS SECTION */}
+      {/* 4. CONTACT SECTION */}
       <section className="container mx-auto px-6 py-32 mb-20">
         <div className="bg-black text-white rounded-[4rem] p-12 md:p-32 relative overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
             <div className="space-y-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                <ShieldCheck size={14} /> Accès réservé aux partenaires
+                <Share2 size={14} /> Accompagnement & Conseil
               </div>
               <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter leading-tight italic">
                 Débloquez le plein potentiel de vos équipes.
               </h2>
               <p className="text-xl text-gray-400 font-light leading-relaxed">
-                Le MetaDesign ToolKit complet est disponible pour nos clients et partenaires. Il comprend les versions éditables, les guides d'animation et un support dédié.
+                Le toolkit est un recueil de ressources libres. Si vous souhaitez passer au niveau supérieur et être accompagné dans votre transformation, contactez-nous.
               </p>
             </div>
             
             <div className="bg-white/5 border border-white/10 p-10 md:p-14 rounded-[3rem] space-y-8 backdrop-blur-sm">
-              <h3 className="font-display text-2xl font-bold tracking-tight">Obtenir un accès</h3>
+              <h3 className="font-display text-2xl font-bold tracking-tight">Allons plus loin ensemble</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Vous travaillez déjà avec S9 ? Demandez vos codes d'accès. Vous souhaitez implémenter ces outils dans votre organisation ? Discutons-en.
+                Vous souhaitez implémenter ces méthodes ou bénéficier d'un regard extérieur sur vos systèmes ? Notre équipe vous accompagne dans le déploiement de solutions sur-mesure.
               </p>
               <div className="flex flex-col gap-4">
-                <Link to="/contact" className="group flex items-center justify-center gap-4 py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform text-xs">
-                  Demander un accès <ArrowRight size={16} />
-                </Link>
-                <button className="flex items-center justify-center gap-4 py-5 border border-white/20 text-white rounded-full font-bold uppercase tracking-widest hover:bg-white/10 transition-colors text-xs">
-                  Télécharger l'aperçu (PDF) <Download size={16} />
-                </button>
+                <a 
+                  href="mailto:meet.section9@gmail.com" 
+                  className="group flex items-center justify-center gap-4 py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform text-xs"
+                >
+                  Nous contacter <ArrowRight size={16} />
+                </a>
               </div>
             </div>
           </div>
 
           <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
-            <span className="font-display text-[35vw] font-black tracking-tighter select-none">TOOLKIT</span>
+            <span className="font-display text-[35vw] font-black tracking-tighter select-none">CONTACT</span>
           </div>
         </div>
       </section>
