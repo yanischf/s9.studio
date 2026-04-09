@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Home2 from './pages/Home2';
 import About from './pages/About';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
@@ -13,6 +14,7 @@ import MetaDesignToolkit from './pages/MetaDesignToolkit';
 import ToolkitDetail from './pages/ToolkitDetail';
 import UniqueOffer from './pages/UniqueOffer';
 import UniqueOfferV2 from './pages/UniqueOfferV2';
+import SectionsToKeep from './pages/SectionsToKeep';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,11 +39,13 @@ const App: React.FC = () => {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Offers />} />
+            <Route path="/home-old" element={<Home />} />
+            <Route path="/v2" element={<Home2 />} />
             <Route path="/about" element={<About />} />
             <Route path="/unique-offer" element={<UniqueOffer />} />
             <Route path="/unique-offer-v2" element={<UniqueOfferV2 />} />
-            <Route path="/offres" element={<Offers />} />
+            <Route path="/sections-to-keep" element={<SectionsToKeep />} />
             <Route path="/toolkit" element={<MetaDesignToolkit />} />
             <Route path="/toolkit/:id" element={<ToolkitDetail />} />
             <Route path="/events" element={<Events />} />

@@ -45,7 +45,7 @@ const ToolkitDetail: React.FC = () => {
                <div className="h-px w-12 bg-gray-200 dark:bg-neutral-800"></div>
                <span className="text-[10px] font-bold text-muted uppercase tracking-widest">S9 RESOURCE PROTOCOL</span>
             </div>
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.85] text-balance">
               {tool.title}.
             </h1>
             <p className="text-xl md:text-2xl text-muted font-light leading-relaxed max-w-3xl italic border-l-4 border-gray-100 dark:border-neutral-800 pl-8">
@@ -130,7 +130,7 @@ const ToolkitDetail: React.FC = () => {
           {/* Right Column: Detailed Steps */}
           <div className="lg:col-span-8 space-y-12">
             <div className="flex justify-between items-end mb-8">
-              <h2 className="text-4xl font-bold tracking-tighter">Étapes détaillées</h2>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">Étapes détaillées</h2>
               <span className="text-[10px] font-bold text-muted uppercase tracking-widest">Protocol — v1.0</span>
             </div>
             

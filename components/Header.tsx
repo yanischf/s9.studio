@@ -21,15 +21,6 @@ const Header: React.FC = () => {
 
         <nav className="hidden md:flex items-center gap-8">
           <NavLink 
-            to="/unique-offer-v2"
-            className={({ isActive }) => 
-              `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
-            }
-          >
-            L'OFFRE
-          </NavLink>
-
-          <NavLink 
             to="/toolkit"
             className={({ isActive }) => 
               `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
@@ -44,7 +35,7 @@ const Header: React.FC = () => {
               `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
             }
           >
-            MANIFESTE
+            À PROPOS
           </NavLink>
           
           <NavLink 
@@ -53,7 +44,7 @@ const Header: React.FC = () => {
               `text-[11px] font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-black' : 'text-muted hover:text-black'}`
             }
           >
-            Évènements
+            ÉVÈNEMENTS
           </NavLink>
 
           <a 
@@ -76,10 +67,10 @@ const Header: React.FC = () => {
           <a href="mailto:meet.section9@gmail.com" className="group w-full p-6 bg-black text-white rounded-[2rem] text-xl font-bold uppercase tracking-widest flex justify-between items-center" onClick={() => setIsMobileMenuOpen(false)}>
             CONTACTER S9 <Zap size={20} />
           </a>
-          <Link to="/unique-offer-v2" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>L'OFFRE</Link>
           <Link to="/toolkit" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>TOOLKIT</Link>
-          <Link to="/about" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>MANIFESTE</Link>
-          <Link to="/events" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>Évènements</Link>
+          <Link to="/about" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>À PROPOS</Link>
+          <Link to="/events" className="text-3xl font-bold tracking-tighter" onClick={() => setIsMobileMenuOpen(false)}>ÉVÈNEMENTS</Link>
+
           <a href="mailto:meet.section9@gmail.com" className="text-3xl font-bold tracking-tighter underline underline-offset-8" onClick={() => setIsMobileMenuOpen(false)}>CONTACTS</a>
         </div>
       )}

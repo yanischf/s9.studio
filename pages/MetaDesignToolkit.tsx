@@ -37,7 +37,7 @@ const MetaDesignToolkit: React.FC = () => {
             </p>
           </div>
           <div className="md:col-span-8 text-right">
-            <h1 className="font-display text-4xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance mb-8">
+            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.85] text-balance mb-8">
               Ressources & <span className="italic">Toolkit</span>
             </h1>
             <p className="text-lg md:text-xl text-muted font-light max-w-2xl ml-auto leading-relaxed italic">
@@ -48,7 +48,7 @@ const MetaDesignToolkit: React.FC = () => {
       </section>
 
       {/* 2. FILTER BAR */}
-      <section className="sticky top-24 z-40 bg-surface/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-100 dark:border-neutral-900">
+      <section className="sticky top-[80px] z-40 bg-surface/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-100 dark:border-neutral-900">
         <div className="container mx-auto px-6 py-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-[10px] font-bold uppercase tracking-widest text-muted mr-4">Filtrer par :</span>
@@ -145,7 +145,7 @@ const MetaDesignToolkit: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest">
                 <Share2 size={14} /> Accompagnement & Conseil
               </div>
-              <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter leading-tight italic">
+              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] italic">
                 Débloquez le plein potentiel de vos équipes.
               </h2>
               <p className="text-xl text-gray-400 font-light leading-relaxed">

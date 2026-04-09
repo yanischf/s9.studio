@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -28,27 +29,25 @@ const Home: React.FC = () => {
     <div className="pt-24 bg-surface">
       {/* 1. HERO SECTION */}
       <section className="container mx-auto px-6 pt-20 pb-12 relative">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start md:items-end">
-          <div className="md:col-span-4 self-center md:self-end">
-            <div className="mb-8 md:mb-0">
-              <p className="text-[11px] text-[#8E9AAF] font-bold uppercase tracking-[0.2em]">
-                META DESIGN • INNOVATION • SYSTÈMES
-              </p>
-            </div>
+        <div className="space-y-12 text-left">
+          <div className="mb-8">
+            <p className="text-[11px] text-[#8E9AAF] font-bold uppercase tracking-[0.2em]">
+              META DESIGN • INNOVATION • SYSTÈMES
+            </p>
           </div>
 
-          <div className="md:col-span-8 text-right relative">
-            <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-extrabold tracking-tighter leading-[0.85] text-balance mb-12 text-black">
-              Ne gérez plus l'innovation. Installez-la.
+          <div className="relative">
+            <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-extrabold tracking-tighter leading-[0.85] text-balance text-black mt-12 mb-8 p-0">
+              Vous êtes le moteur de votre entreprise. C'est exactement le problème.
             </h1>
 
-            <div className="space-y-8 max-w-2xl ml-auto mb-12">
-              <p className="text-xl md:text-2xl text-[#8E9AAF] font-medium leading-relaxed italic">
-                Nous transformons votre structure en moteur d’innovation autonome pour libérer 15h de votre temps hebdomadaire grâce au déploiement du Lab Natif.
-                </p>
+            <div className="max-w-2xl mr-auto mt-8 p-0">
+              <p className="text-xl md:text-2xl text-[#8E9AAF] font-medium leading-relaxed italic m-0 p-0">
+                Vous avez les bonnes personnes. Nous concevons le cadre qui les libère
+              </p>
             </div>
 
-            <div className="flex justify-end gap-6 items-center">
+            <div className="flex justify-start gap-6 items-center mt-12">
               <Link 
                 to="/unique-offer-v2" 
                 className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
@@ -65,6 +64,7 @@ const Home: React.FC = () => {
             src="https://image.noelshack.com/fichiers/2026/05/4/1769699586-home-bg.png" 
             alt="S9 Studio - Human Grid Protocol" 
             className="w-full max-h-[70vh] object-contain group-hover:scale-[1.03] transition-transform duration-1000 ease-out"
+            referrerPolicy="no-referrer"
           />
         </div>
       </section>
@@ -88,20 +88,20 @@ const Home: React.FC = () => {
             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-1 gap-6">
               {[
                 {
-                  title: "Time-to-market à l'arrêt",
-                  desc: "Vos offres sortent trop tard, la concurrence prend l'avance.",
+                  title: "Trop lent pour le marché, trop vite pour l'équipe",
+                  desc: "Vous avez une idée. Elle circule en réunion pendant trois semaines. Quand elle sort enfin, le marché a déjà bougé.",
                   icon: <Clock size={24} />,
                   leak: "Retard Stratégique"
                 },
                 {
-                  title: "Rente Prestataire",
-                  desc: "Vous payez l'extérieur pour ce que vous devriez maîtriser en interne.",
+                  title: "L'accord silencieux qui enterre les projets",
+                  desc: "Une bonne idée émerge en réunion. Tout le monde acquiesce. Deux semaines après, personne ne l'a portée. Elle a disparu sans que personne ne sache pourquoi.",
                   icon: <Coins size={24} />,
                   leak: "Dépendance Financière"
                 },
                 {
-                  title: "L’Omniprésence forcée",
-                  desc: "Si vous n'êtes pas là, rien ne bouge. Votre temps de cerveau est gaspillé dans l'opérationnel.",
+                  title: "Bons individuellement. Bloqués collectivement.",
+                  desc: "Vos collaborateurs sont bons dans leur domaine. Mais dès qu'il s'agit de créer ensemble, quelque chose coince. Le collectif ne produit pas ce que les individus promettent.",
                   icon: <UserMinus size={24} />,
                   leak: "Épuisement du Leader"
                 }
@@ -135,16 +135,17 @@ const Home: React.FC = () => {
           <div className="lg:col-span-8 space-y-12">
             <div className="space-y-4">
               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted flex items-center gap-3">
-                <TrendingUp size={14} /> La Mutation
+                <TrendingUp size={14} /> Le Diagnostic
               </span>
               <h2 className="text-5xl md:text-[6rem] font-bold tracking-tighter leading-[0.9] text-black">
-                Passez de l'impulsion individuelle à la performance collective.
-              </h2>
+                Votre organisation n'a pas été conçue pour créer sans vous.
+                </h2>
             </div>
             
             <div className="max-w-3xl space-y-8">
               <p className="text-2xl md:text-3xl text-muted font-light leading-relaxed italic">
-                Votre expertise mérite une infrastructure à sa mesure. <span className="text-black font-bold">Section9 n'ajoute pas de manager</span>, elle installe une capacité de création permanente. Vous ne cherchez plus l'innovation : <span className="underline decoration-black/20 underline-offset-8">vous la produisez.</span>
+                          Ce n'est pas un problème de talent. C'est un problème de conception. S9 intervient exactement là.
+
               </p>
             </div>
           </div>
@@ -162,139 +163,90 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. LES DYNAMIQUES CLÉS */}
-      <section className="container mx-auto px-6 py-32 border-t border-gray-100">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4 pt-12">
-                <div className="rounded-3xl overflow-hidden aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Focus" />
-                </div>
-                <div className="p-8 bg-black text-white rounded-3xl flex flex-col justify-end min-h-[200px]">
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Impact</span>
-                   <p className="text-lg font-bold leading-tight mt-4 italic">Des effets visibles et durables.</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="rounded-3xl overflow-hidden aspect-square grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="System" />
-                </div>
-                <div className="rounded-3xl overflow-hidden aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Method" />
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* 5. LES 3 MODULES DE L'OFFRE (ARCHITECTURE UNIQUE OFFER) */}
+      <section className="container mx-auto px-6 py-32">
+        <div className="mb-20">
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">La capacité de créer, installée dans vos murs.</span>
+          <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight">Trois modules distincts. Un seul objectif : que votre organisation innove sans vous.</h2>
+        </div>
+
+        <div className="relative">
+          {/* Connecting Line */}
+          <div className="hidden md:block absolute top-[80px] left-[10%] right-[10%] h-[4px] bg-black/30 z-0" />
           
-          <div className="lg:col-span-6 order-1 lg:order-2 space-y-12">
-            <div className="space-y-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted flex items-center gap-2">
-                <Zap size={12} /> Dynamiques Clés
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">Les dynamiques de votre transformation</h2>
-              <p className="text-lg text-muted font-light">Notre expertise repose sur 4 dynamiques fondamentales</p>
-            </div>
-            
-            <div className="grid grid-cols-1 gap-12">
-              {[
-                { 
-                  t: "1. Cadre", 
-                  d: "Nous concevons les règles, méthodes et processus qui structurent la création avant même de produire des solutions.", 
-                  r: "Résultat : les équipes savent comment avancer, décider et créer ensemble.",
-                  icon: <Maximize size={20} /> 
-                },
-                { 
-                  t: "2. Environnement", 
-                  d: "Nous travaillons sur les espaces physiques, numériques et organisationnels qui influencent les comportements et la collaboration.", 
-                  r: "Résultat : la création devient plus fluide et plus collective.",
-                  icon: <Box size={20} /> 
-                },
-                { 
-                  t: "3. Interaction", 
-                  d: "Nous orchestrons les dynamiques humaines : rôles, contributions, intelligence collective et prise de décision.", 
-                  r: "Résultat : les expertises convergent au lieu de s’opposer.",
-                  icon: <Users size={20} /> 
-                },
-                { 
-                  t: "4. Mise en action", 
-                  d: "Nous ancrons les projets dans le réel par le prototypage, le test et l’itération.", 
-                  r: "Résultat : les idées deviennent des projets concrets et activables.",
-                  icon: <Zap size={20} /> 
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="flex gap-6 group border-b border-gray-100 pb-8 last:border-0">
-                  <div className="shrink-0 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-muted group-hover:bg-black group-hover:text-white transition-all">
-                    {item.icon}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+            {[
+              {
+                id: "01",
+                title: "La Creative Room",
+                subtitle: "L'espace physique et digital dédié à la création dans vos murs.",
+                desc: "Vos équipes ont un lieu protégé de l'opérationnel conçu pour que les idées émergent, se testent et avancent.",
+                result: "Diagnostic + installation + configuration.",
+                impact: "Une durée adaptée à votre structure.",
+                icon: <Box className="w-10 h-10" />,
+                cta: "Installer ma Creative Room"
+              },
+              {
+                id: "02",
+                title: "La Méthode",
+                subtitle: "Les rituels et processus qui transforment vos équipes en créateurs autonomes.",
+                desc: "Vos collaborateurs savent comment avancer, décider et créer ensemble sans attendre votre validation.",
+                result: "Accompagnement et formation transmis.",
+                impact: "Jusqu'à ce que vos équipes n'en aient plus besoin.",
+                icon: <Workflow className="w-10 h-10" />,
+                cta: "Découvrir la Méthode"
+              },
+              {
+                id: "03",
+                title: "Le Sprint",
+                subtitle: "Le premier projet stratégique piloté ensemble pour que vos équipes sachent continuer seules.",
+                desc: "Un livrable concret sorti en temps record. Et une équipe qui sait reproduire le processus sans vous.",
+                result: "Ateliers de facilitation + transmission des outils.",
+                impact: "S9 s'efface quand la machine tourne.",
+                icon: <Zap className="w-10 h-10" />,
+                cta: "Lancer mon Sprint"
+              }
+            ].map((module, i) => (
+              <div key={i} className="group p-12 bg-white border border-gray-100 rounded-[3rem] hover:border-black transition-all flex flex-col justify-between h-full shadow-sm hover:shadow-xl">
+                <div className="space-y-8">
+                  <div className="flex justify-between items-center">
+                    <div className="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center text-black shadow-sm group-hover:bg-black group-hover:text-white transition-all">
+                      {module.icon}
+                    </div>
+                    <span className="text-4xl font-black text-gray-100 group-hover:text-black transition-colors">{module.id}</span>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold tracking-tight">{item.t}</h3>
-                    <p className="text-sm text-muted leading-relaxed">{item.d}</p>
-                    <p className="text-sm font-bold italic text-black pt-1">{item.r}</p>
+                  <div className="space-y-4">
+                    <h3 className="text-3xl font-bold tracking-tight">{module.title}</h3>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted">{module.subtitle}</p>
+                    <p className="text-muted leading-relaxed italic">{module.desc}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+                
+                <div className="mt-12 pt-8 border-t border-gray-50 space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-sm"><strong>Le résultat :</strong> <span className="italic text-muted">{module.result}</span></p>
+                    <p className="text-sm"><strong>L’impact :</strong> <span className="italic text-black font-bold">{module.impact}</span></p>
+                  </div>
+                  
+                  <Link 
+                    to="/unique-offer-v2" 
+                    className="flex items-center justify-between w-full px-6 py-4 bg-surface rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all group/btn"
+                  >
+                    {module.cta} <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
 
-      {/* 5. NOTRE UNIQUE OFFRE */}
-      <section className="container mx-auto px-6 py-32 bg-surface rounded-[5rem]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-10">
-            <div className="space-y-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Infrastructure</span>
-              <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9]">Notre unique offre : Le Lab Natif</h2>
-              <p className="text-xl text-muted font-light leading-relaxed max-w-xl">
-                L'infrastructure souveraine, physique et digitale, qui transforme votre savoir-faire en avantage stratégique.
-              </p>
-            </div>
-            
-            <div className="space-y-6">
-              {[
-                { title: "Cockpit de Décision", desc: "Cartographier la complexité et décider en temps réel.", icon: <Cpu className="w-5 h-5" /> },
-                { title: "Espace d'Action Hybride", desc: "Un environnement sur-mesure dans vos murs et sur vos écrans.", icon: <Box className="w-5 h-5" /> },
-                { title: "Protocole d’Émergence", desc: "Une méthode d'action qui rend vos équipes autonomes.", icon: <Zap className="w-5 h-5" /> }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-6 items-start group">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all">
-                    {item.icon}
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="font-bold tracking-tight">{item.title}</h4>
-                    <p className="text-sm text-muted">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-6">
-              <Link 
-                to="/unique-offer-v2" 
-                className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform w-fit shadow-xl"
-              >
-                DÉCOUVRIR LE LAB NATIF <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-black/5 rounded-[4rem] blur-2xl group-hover:bg-black/10 transition-colors"></div>
-            <div className="relative rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl border border-white/20">
-              <img 
-                src="https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?auto=format&fit=crop&w=1200&q=80" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Lab Natif Environment"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-12">
-                <div className="flex items-center gap-3 text-white">
-                  <ShieldCheck size={20} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Innovation Souveraine</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="mt-20 flex justify-center">
+          <Link 
+            to="/unique-offer-v2" 
+            className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-xl"
+          >
+            DÉCOUVRIR L'OFFRE COMPLÈTE <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+          </Link>
         </div>
       </section>
 
@@ -305,24 +257,24 @@ const Home: React.FC = () => {
              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">Qualification</span>
              <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-none mb-8">Est-ce pour vous ?</h2>
              <p className="text-xl text-muted font-light leading-relaxed max-w-sm">
-               Le Lab Natif est conçu pour les leaders qui veulent transformer leur expertise en infrastructure autonome.
+               Si vous vous reconnaissez dans l'un de ces trois profils, vous êtes exactement là où S9 intervient.
              </p>
           </div>
           <div className="md:col-span-7 space-y-6">
              {[
                {
-                 title: "Le Dirigeant « Pompier »",
-                 desc: "L'innovation ne repose que sur votre énergie. Sans votre validation constante, rien ne sort. Vous voulez récupérer votre temps.",
+                 title: "Le Moteur",
+                 desc: "Tout repose sur votre énergie. Sans votre présence, rien ne sort. Vous êtes le moteur et vous commencez à sentir que c'est exactement le problème.",
                  icon: <Flame size={24} />
                },
                {
-                 title: "L’Expert « Freiné »",
-                 desc: "Vous avez les idées, mais votre structure est trop lente. Vous en avez assez de voir la concurrence vous rattraper par simple vitesse.",
+                 title: "L'Éclaireur",
+                 desc: "Vous voyez où aller. Vous avez ouvert la voie. Mais quand vous regardez derrière vous, vos équipes n'ont pas les outils pour suivre sans vous.",
                  icon: <FastForward size={24} />
                },
                {
-                 title: "Le Bâtisseur « Souverain »",
-                 desc: "Vous refusez la dépendance aux agences externes. Vous voulez que la capacité de créer soit un actif permanent de votre entreprise.",
+                 title: "L'Architecte",
+                 desc: "Vous savez exactement ce qui ne fonctionne pas. Vous avez même les solutions en tête. Ce qui manque : le cadre pour que les autres construisent avec vous.",
                  icon: <Shield size={24} />
                }
              ].map((persona, idx) => (
@@ -345,31 +297,21 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. NOTRE POSTURE */}
-      <section className="bg-black text-white py-40 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-10">
-              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted">Notre Posture</span>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">Accompagner plutôt qu’imposer</h2>
-              <p className="text-xl text-gray-400 leading-relaxed max-w-lg italic">
-                Nous n’apportons pas de solutions toutes faites. Nous concevons avec vous le cadre qui permet aux bonnes solutions d’émerger, d’être comprises, partagées et mises en œuvre.
-              </p>
-            </div>
-            <div className="space-y-12">
-              <blockquote className="text-2xl md:text-4xl font-light italic leading-tight tracking-tight border-l-4 border-white/20 pl-8">
-                “Nous ne cherchons pas à maîtriser le futur, nous cherchons à le rendre concevable, souhaitable et partageable.”
-              </blockquote>
-              <div className="pt-8 flex items-center gap-6">
-                <Link to="/about" className="text-sm font-bold uppercase tracking-widest underline underline-offset-8 decoration-white/20 hover:decoration-white transition-colors">
-                  Lire le manifeste complet
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* 7. CITATION */}
+      <section className="bg-black text-white py-60 relative overflow-hidden flex items-center justify-center">
+        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
+          <motion.blockquote 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-4xl md:text-7xl font-light italic leading-tight tracking-tighter"
+          >
+            “Notre travail est réussi quand il devient invisible ; quand votre organisation crée sans nous.”
+          </motion.blockquote>
         </div>
-        <div className="absolute inset-0 opacity-5 flex items-center justify-center select-none pointer-events-none tracking-tighter">
-          <span className="font-logo text-[35vw] font-black leading-none">§</span>
+        <div className="absolute inset-0 opacity-15 flex items-center justify-center select-none pointer-events-none">
+          <span className="font-logo text-[40vw] font-black leading-none">§</span>
         </div>
       </section>
 
@@ -378,7 +320,7 @@ const Home: React.FC = () => {
         <div className="bg-white rounded-[4rem] p-12 md:p-32 text-center border border-gray-100 shadow-2xl relative overflow-hidden">
           <div className="relative z-10 space-y-12">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight max-w-4xl mx-auto">
-              Et si votre entreprise innovait enfin sans vous ?
+              Le premier pas ne prend pas 12 semaines. Il prend 45 minutes.
             </h2>
             <div className="flex flex-wrap justify-center gap-6">
               <a 

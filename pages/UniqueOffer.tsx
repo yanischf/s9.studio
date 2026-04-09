@@ -17,7 +17,9 @@ import {
   Settings,
   Scale,
   GitBranch,
-  Hourglass
+  Hourglass,
+  Maximize,
+  Box
 } from 'lucide-react';
 
 const UniqueOffer: React.FC = () => {
@@ -31,7 +33,7 @@ const UniqueOffer: React.FC = () => {
             {/* Right Column: The Content */}
             <div className="lg:col-span-12 space-y-10">
               <div className="space-y-6">
-                <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-extrabold tracking-tighter leading-[0.9] text-balance text-black">
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.85] text-balance text-black">
                   Activez le système d’exploitation de votre innovation.
                 </h1>
                 <p className="text-xl md:text-2xl text-muted font-light leading-relaxed italic max-w-2xl">
@@ -62,8 +64,8 @@ const UniqueOffer: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
             <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
-              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted block">État des lieux</span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight text-black">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">État des lieux</span>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-black">
                 Votre expertise est un atout, votre omniprésence est un risque.
               </h2>
               <div className="space-y-4">
@@ -129,8 +131,8 @@ const UniqueOffer: React.FC = () => {
       {/* 3. LA SOLUTION (L'OFFRE UNIQUE S9) */}
       <section className="container mx-auto px-6 py-32 bg-surface rounded-[5rem]">
         <div className="text-center space-y-6 mb-24">
-          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted block">S9 Operating System</span>
-          <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight text-black">Ne gérez plus l'innovation. Installez-la.</h2>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">S9 Operating System</span>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-black">Ne gérez plus l'innovation. Installez-la.</h2>
           <p className="text-xl text-muted max-w-3xl mx-auto italic">
             Possédez votre propre moteur d'innovation. Votre Lab Natif agit comme un écosystème complet conçu pour transformer vos intuitions en décisions stratégiques immédiates et autonomes. 
           </p>
@@ -211,13 +213,90 @@ const UniqueOffer: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. LA MÉTHODOLOGIE (INSTALLATION EN 3 TEMPS) */}
+      {/* 4. LES DYNAMIQUES CLÉS (MOVED FROM HOME) */}
+      <section className="container mx-auto px-6 py-16 border-t border-gray-100">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+          <div className="lg:col-span-6 order-2 lg:order-1">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 pt-4">
+                <div className="rounded-3xl overflow-hidden aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700">
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Focus" />
+                </div>
+                <div className="p-8 bg-black text-white rounded-3xl flex flex-col justify-end min-h-[200px]">
+                   <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Impact</span>
+                   <p className="text-lg font-bold leading-tight mt-4 italic">Des effets visibles et durables.</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="rounded-3xl overflow-hidden aspect-square grayscale hover:grayscale-0 transition-all duration-700">
+                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="System" />
+                </div>
+                <div className="rounded-3xl overflow-hidden aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Method" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="lg:col-span-6 order-1 lg:order-2 space-y-12">
+            <div className="space-y-4">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted flex items-center gap-2">
+                <Zap size={12} /> Dynamiques Clés
+              </span>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-black">Les dynamiques de votre transformation</h2>
+              <p className="text-lg text-muted font-light">Notre expertise repose sur 4 dynamiques fondamentales</p>
+            </div>
+            
+            <div className="grid grid-cols-1 gap-12">
+              {[
+                { 
+                  t: "1. Cadre", 
+                  d: "Nous concevons les règles, méthodes et processus qui structurent la création avant même de produire des solutions.", 
+                  r: "Résultat : les équipes savent comment avancer, décider et créer ensemble.",
+                  icon: <Maximize size={20} /> 
+                },
+                { 
+                  t: "2. Environnement", 
+                  d: "Nous travaillions sur les espaces physiques, numériques et organisationnels qui influencent les comportements et la collaboration.", 
+                  r: "Résultat : la création devient plus fluide et plus collective.",
+                  icon: <Box size={20} /> 
+                },
+                { 
+                  t: "3. Interaction", 
+                  d: "Nous orchestrons les dynamiques humaines : rôles, contributions, intelligence collective et prise de décision.", 
+                  r: "Résultat : les expertises convergent au lieu de s’opposer.",
+                  icon: <Users size={20} /> 
+                },
+                { 
+                  t: "4. Mise en action", 
+                  d: "Nous ancrons les projets dans le réel par le prototypage, le test et l’itération.", 
+                  r: "Résultat : les idées deviennent des projets concrets et activables.",
+                  icon: <Zap size={20} /> 
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-6 group border-b border-gray-100 pb-8 last:border-0">
+                  <div className="shrink-0 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-muted group-hover:bg-black group-hover:text-white transition-all">
+                    {item.icon}
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold tracking-tight text-black">{item.t}</h3>
+                    <p className="text-sm text-muted leading-relaxed">{item.d}</p>
+                    <p className="text-sm font-bold italic text-black pt-1">{item.r}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. LA MÉTHODOLOGIE (INSTALLATION EN 3 TEMPS) */}
       <section className="bg-surface py-32">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20 items-end">
             <div className="space-y-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted block">Le Process</span>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight text-black">Installation en 3 temps, sans friction.</h2>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Le Process</span>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-black">Installation en 3 temps, sans friction.</h2>
             </div>
             <div className="space-y-6">
               <div className="h-40 w-full rounded-[2rem] overflow-hidden grayscale opacity-50">
@@ -280,7 +359,7 @@ const UniqueOffer: React.FC = () => {
       <section className="container mx-auto px-6 py-20 pb-40">
         <div className="bg-black text-white rounded-[5rem] p-12 md:p-32 text-center relative overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.2)]">
           <div className="relative z-10 space-y-12">
-            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] max-w-5xl mx-auto">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] max-w-5xl mx-auto">
               Prêt à transformer votre structure en machine à créer ?
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed italic">

@@ -29,7 +29,7 @@ const Events: React.FC = () => {
             </span>
           </div>
           <div className="md:col-span-8 text-right">
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance mb-8">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.85] text-balance mb-8">
               Événements & Échanges
             </h1>
             <p className="text-lg md:text-xl text-muted font-light max-w-2xl ml-auto leading-relaxed italic">
@@ -72,7 +72,7 @@ const Events: React.FC = () => {
         <div className="flex justify-between items-end mb-16">
           <div className="space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Agenda</span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Prochains rendez-vous</h2>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">Prochains rendez-vous</h2>
           </div>
           <div className="text-[10px] font-bold text-muted uppercase tracking-widest">(01)</div>
         </div>
@@ -119,7 +119,7 @@ const Events: React.FC = () => {
         <div className="flex justify-between items-end mb-16 pt-20 border-t border-gray-100 dark:border-neutral-900">
           <div className="space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Archives</span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Événements passés</h2>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">Événements passés</h2>
           </div>
           <div className="text-[10px] font-bold text-muted uppercase tracking-widest">(02)</div>
         </div>
@@ -162,8 +162,8 @@ const Events: React.FC = () => {
         <section className="bg-black text-white rounded-[3rem] p-12 md:p-24 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
             <div className="space-y-8">
-              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-muted block">Newsletter</span>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">Restez à l'écoute.</h2>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Newsletter</span>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">Restez à l'écoute.</h2>
               <div className="text-[10px] font-bold text-muted uppercase tracking-widest">(03)</div>
             </div>
             
