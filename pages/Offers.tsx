@@ -85,14 +85,6 @@ const Offers: React.FC = () => {
             <p className="text-xl md:text-2xl text-muted font-medium leading-relaxed max-w-3xl italic">
               S9 conçoit les environnements physiques et digitaux, les rituels collaboratifs et les outils IA sur mesure qui libèrent vos équipes des tâches répétitives pour automatiser l'innovation au cœur de votre culture d'entreprise.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a 
-                href="#liberation" 
-                className="group flex items-center gap-6 px-10 py-5 bg-black text-white dark:bg-white dark:text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
-              >
-                Découvrir l'offre <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </a>
-            </div>
           </motion.div>
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
              <div className="relative">

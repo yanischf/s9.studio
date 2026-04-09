@@ -3,9 +3,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { 
   ArrowRight, 
-  Linkedin, 
-  Twitter, 
-  Globe, 
   Users, 
   Target, 
   Zap, 
@@ -158,26 +155,6 @@ const About: React.FC = () => {
                   i % 2 === 1 ? 'md:mt-32' : ''
                 }`}
               >
-                <div className="flex justify-end items-start mb-16">
-                  <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {member.socials.linkedin && (
-                      <a href={member.socials.linkedin} className="text-black hover:scale-125 transition-transform">
-                        <Linkedin size={20} />
-                      </a>
-                    )}
-                    {member.socials.twitter && (
-                      <a href={member.socials.twitter} className="text-black hover:scale-125 transition-transform">
-                        <Twitter size={20} />
-                      </a>
-                    )}
-                    {member.socials.website && (
-                      <a href={member.socials.website} className="text-black hover:scale-125 transition-transform">
-                        <Globe size={20} />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
                 <div className="aspect-[16/10] mb-6 overflow-hidden grayscale rounded-[2rem]">
                   <img 
                     src={member.image} 
