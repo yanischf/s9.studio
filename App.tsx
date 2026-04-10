@@ -24,6 +24,24 @@ const ScrollToTop = () => {
   return null;
 };
 
+const GA_MEASUREMENT_ID = 'G-MKRG7BWT1K';
+
+const AnalyticsTracker = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const gtag = (window as any).gtag;
+    if (typeof gtag !== 'function') return;
+    const path = `${location.pathname}${location.search}${location.hash}`;
+    gtag('event', 'page_view', {
+      page_path: path,
+      page_location: window.location.href,
+      page_title: document.title,
+      send_to: GA_MEASUREMENT_ID,
+    });
+  }, [location]);
+  return null;
+};
+
 const App: React.FC = () => {
   // Verrouillage du mode clair au démarrage
   useEffect(() => {
@@ -35,6 +53,7 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <ScrollToTop />
+      <AnalyticsTracker />
       <div className="flex flex-col min-h-screen transition-colors duration-300">
         <Header />
         <main className="flex-grow">
