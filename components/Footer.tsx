@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+declare const __BUILD_YEAR__: string;
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-surface border-t border-gray-100 py-8 px-6">
@@ -12,7 +14,7 @@ const Footer: React.FC = () => {
             <span className="text-[10px] font-bold tracking-tighter uppercase text-black">Section9</span>
           </Link>
           <span className="text-[10px] font-medium text-muted uppercase tracking-widest">
-            © {new Date().getFullYear()}
+            © {__BUILD_YEAR__}
           </span>
         </div>
 

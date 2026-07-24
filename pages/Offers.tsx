@@ -1,6 +1,6 @@
 
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -58,13 +58,6 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 };
 
 const Offers: React.FC = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="bg-surface dark:bg-black min-h-screen">
       {/* 1. HERO */}
@@ -100,20 +93,20 @@ const Offers: React.FC = () => {
       </section>
 
       {/* 2. NAVIGATION ANCRÉE */}
-      <section className="sticky top-[81px] z-40 bg-surface/80 backdrop-blur-md border-b border-gray-100 dark:border-neutral-900 py-6 flex justify-center gap-4">
-        <button 
-          onClick={() => scrollToSection('liberation')}
+      <nav aria-label="Navigation interne de la page" className="sticky top-[81px] z-40 bg-surface/80 backdrop-blur-md border-b border-gray-100 dark:border-neutral-900 py-6 flex justify-center gap-4">
+        <a
+          href="#liberation"
           className="px-8 py-4 border-2 border-black dark:border-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
         >
           La Libération
-        </button>
-        <button 
-          onClick={() => scrollToSection('creation')}
+        </a>
+        <a
+          href="#creation"
           className="px-8 py-4 border-2 border-black dark:border-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
         >
           La Création
-        </button>
-      </section>
+        </a>
+      </nav>
 
       {/* 3. DIFFÉRENCIATION */}
       <section className="container mx-auto px-6 py-40">
@@ -299,7 +292,7 @@ const Offers: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-4">
                 <div className="rounded-3xl overflow-hidden aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Focus" />
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Équipe concentrée en atelier de travail" />
                 </div>
                 <div className="p-8 bg-black text-white rounded-3xl flex flex-col justify-end min-h-[200px]">
                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Impact</span>
@@ -308,10 +301,10 @@ const Offers: React.FC = () => {
               </div>
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden aspect-square grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="System" />
+                  <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Système et méthodes de conception" />
                 </div>
                 <div className="rounded-3xl overflow-hidden aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Method" />
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" alt="Collaboration en équipe autour d'une méthode" />
                 </div>
               </div>
             </div>

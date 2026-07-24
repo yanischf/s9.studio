@@ -1,0 +1,25 @@
+# Section9 — https://section9.studio
+# All crawlers welcome.
+User-agent: *
+Allow: /
+
+# AI agents & LLM crawlers — explicitly allowed.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://section9.studio/sitemap.xml

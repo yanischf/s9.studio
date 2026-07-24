@@ -103,7 +103,7 @@ const ToolkitDetail: React.FC = () => {
           {/* Left Column: What it allows / Expected Results */}
           <div className="lg:col-span-4 space-y-20">
             <div className="space-y-10">
-              <h3 className="text-2xl font-bold tracking-tight border-b border-gray-100 dark:border-neutral-900 pb-4">Ce qu’elle permet de faire</h3>
+              <h2 className="text-2xl font-bold tracking-tight border-b border-gray-100 dark:border-neutral-900 pb-4">Ce qu’elle permet de faire</h2>
               <ul className="space-y-6">
                 {tool.whatItAllows.map((item, i) => (
                   <li key={i} className="flex gap-4">
@@ -115,7 +115,7 @@ const ToolkitDetail: React.FC = () => {
             </div>
 
             <div className="space-y-10">
-              <h3 className="text-2xl font-bold tracking-tight border-b border-gray-100 dark:border-neutral-900 pb-4">Résultat attendu</h3>
+              <h2 className="text-2xl font-bold tracking-tight border-b border-gray-100 dark:border-neutral-900 pb-4">Résultat attendu</h2>
               <ul className="space-y-6">
                 {tool.expectedResult.map((item, i) => (
                   <li key={i} className="flex gap-4">

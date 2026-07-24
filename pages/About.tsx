@@ -77,6 +77,7 @@ const About: React.FC = () => {
 
       {/* POURQUOI SECTION */}
       <section className="bg-surface py-32 rounded-[5rem] mx-4 md:mx-10 mb-40 overflow-hidden">
+        <h2 className="sr-only">Pourquoi Section9 ?</h2>
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div 
@@ -165,7 +166,7 @@ const About: React.FC = () => {
 
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h4 className="text-3xl md:text-4xl font-bold tracking-tight text-black">{member.name}</h4>
+                    <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-black !font-sans">{member.name}</h3>
                     <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted">{member.role}</p>
                   </div>
                   <div className="space-y-4">

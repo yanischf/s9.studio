@@ -69,9 +69,9 @@ const OfferDetail: React.FC = () => {
             </div>
 
             <div className="bg-white dark:bg-neutral-900 rounded-[3rem] p-10 md:p-14 border border-gray-100 dark:border-neutral-800 space-y-10">
-               <h3 className="text-2xl font-bold tracking-tighter flex items-center gap-4">
+               <h2 className="text-2xl font-bold tracking-tighter flex items-center gap-4">
                   Bénéfices <div className="h-px flex-grow bg-gray-100 dark:bg-neutral-800"></div>
-               </h3>
+               </h2>
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                  {offer.benefits.map((benefit, idx) => (
                    <div key={idx} className="flex items-center gap-4 p-4 border border-gray-50 dark:border-neutral-800 rounded-2xl bg-surface dark:bg-black/50">

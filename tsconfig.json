@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "pages", "components", "App.tsx", "index.tsx", "constants.tsx", "types.ts"]
+  "include": ["pages", "components", "App.tsx", "entry-client.tsx", "entry-server.tsx", "seo.ts", "constants.tsx", "types.ts"]
 }

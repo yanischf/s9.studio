@@ -23,7 +23,7 @@ export const OFFERS: Offer[] = [
     id: 'design-environments',
     title: 'Design Environments — Créez les conditions de la créativité',
     shortDescription: 'Analysez vos environnements pour construire un cadre qui permet aux équipes de collaborer et de concrétiser leurs idées.',
-    problem: 'Vos équipes ont des idées, but elles restent en silo. Les méthodes et l’espace de travail ne favorisent pas la collaboration, et la créativité stagne.',
+    problem: 'Vos équipes ont des idées, mais elles restent en silo. Les méthodes et l’espace de travail ne favorisent pas la collaboration, et la créativité stagne.',
     solution: 'Nous analysons vos environnements, méthodes et cultures pour construire un cadre qui permet aux équipes de collaborer et de concrétiser leurs idées.',
     benefits: ['Collaboration plus fluide', 'Idées rapidement matérialisées', 'Créativité structurée et reproductible'],
     format: '4–8 semaines, audit + recommandations + feuille de route',
