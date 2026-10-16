@@ -1,347 +1,295 @@
-
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Target, 
-  Workflow, 
-  Users, 
-  Layers, 
-  CheckCircle2,
-  Zap,
-  Box,
-  Maximize,
-  Cpu,
-  ShieldCheck,
-  AlertTriangle,
-  Clock,
-  Coins,
-  UserMinus,
-  TrendingUp,
-  Flame,
-  FastForward,
-  Shield
-} from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Building2, Box, MapPin, Users } from 'lucide-react';
+import { PROJECTS } from '../constants';
+
+const SCALES = [
+  {
+    icon: <Building2 className="w-7 h-7" />,
+    title: 'Organisations',
+    body: "Rôles, processus, gouvernance. Ce qui permet à une équipe d'avancer sans tout faire remonter.",
+  },
+  {
+    icon: <Box className="w-7 h-7" />,
+    title: 'Espaces',
+    body: "Lieux de travail, de rencontre, de création. Ce que l'environnement physique rend possible ou empêche.",
+  },
+  {
+    icon: <MapPin className="w-7 h-7" />,
+    title: 'Villes et territoires',
+    body: "Usages, participation, appropriation. Ce qu'un territoire laisse ouvert à celles et ceux qui l'habitent.",
+  },
+  {
+    icon: <Users className="w-7 h-7" />,
+    title: 'Communautés',
+    body: "Contribution, coopération, reconnaissance. Ce qui fait qu'un collectif se construit plutôt qu'il ne consomme.",
+  },
+];
+
+const CONVICTIONS = [
+  {
+    num: '01',
+    title: 'Tout le monde conçoit.',
+    body: "Chaque personne, chaque collectif fabrique des solutions au quotidien. Notre rôle n'est pas de les remplacer, mais de leur donner de meilleures conditions pour le faire.",
+  },
+  {
+    num: '02',
+    title: 'La différence des regards est une ressource.',
+    body: "Personne ne détient seul la connaissance d'un problème complexe. C'est dans la rencontre entre des savoirs qui ne se ressemblent pas que l'inattendu apparaît.",
+  },
+  {
+    num: '03',
+    title: 'Le prototype est un outil de pensée.',
+    body: "On comprend un problème en le manipulant. Tester tôt, ajuster, recommencer : c'est ainsi qu'une idée devient réelle.",
+  },
+  {
+    num: '04',
+    title: "Un cadre n'est jamais neutre.",
+    body: "Concevoir un cadre, c'est décider de ce qui sera possible. Nous en assumons la responsabilité, et nous la rendons visible.",
+  },
+  {
+    num: '05',
+    title: "Notre travail réussit quand il n'est plus nécessaire.",
+    body: "Nous construisons des dispositifs ouverts, que d'autres peuvent s'approprier, transformer, parfois détourner.",
+  },
+];
 
 const Home: React.FC = () => {
   return (
-    <div className="pt-24 bg-surface">
-      {/* 1. HERO SECTION */}
-      <section className="container mx-auto px-6 pt-20 pb-12 relative">
-        <div className="space-y-12 text-left">
-          <div className="mb-8">
-            <p className="text-[11px] text-[#8E9AAF] font-bold uppercase tracking-[0.2em]">
-              META DESIGN • INNOVATION • SYSTÈMES
+    <div className="bg-surface dark:bg-black min-h-screen">
+      {/* 1. HERO */}
+      <section className="container mx-auto px-6 py-40">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-8 space-y-8"
+          >
+            <span className="inline-block px-4 py-1.5 border border-gray-200 dark:border-neutral-700 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] text-muted">
+              Studio de design global
+            </span>
+            <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance">
+              Nous concevons ce qui rend la création possible.
+            </h1>
+            <p className="text-xl md:text-2xl text-muted font-medium leading-relaxed max-w-2xl italic">
+              Une organisation, un lieu, un territoire, une communauté. Avant les solutions, il y a les conditions dans lesquelles elles naissent. C'est là que nous travaillons.
+            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+              <a
+                href="#projets"
+                className="group inline-flex items-center justify-center gap-3 px-9 py-5 bg-black text-white dark:bg-white dark:text-black rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
+              >
+                Découvrir nos projets <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </motion.div>
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="w-56 h-56 md:w-64 md:h-64 rounded-full border border-gray-200 dark:border-neutral-800 flex items-center justify-center">
+                <span className="font-logo text-8xl md:text-9xl font-black">§</span>
+              </div>
+              <span className="absolute -bottom-3 -right-2 bg-black text-white px-4 py-2 rounded-full text-[9px] font-bold uppercase tracking-[0.2em]">
+                Meta-design
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. LA COUCHE INVISIBLE */}
+      <section className="bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06] flex items-center justify-center select-none pointer-events-none" aria-hidden="true">
+          <span className="font-logo text-[55vw] font-black leading-none">§</span>
+        </div>
+        <div className="relative container mx-auto px-6 py-40">
+          <div className="max-w-3xl space-y-8">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 block">La couche invisible</span>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95]">
+              Ce qu'on ne voit pas décide de presque tout.
+            </h2>
+            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <p>Les règles implicites. La façon dont une décision circule. L'espace qui rapproche ou qui isole. Les rituels qui autorisent une idée ou la font taire.</p>
+              <p>Cette couche ne figure dans aucun livrable. Pourtant, c'est elle qui détermine ce qu'un groupe est capable d'imaginer, de décider et de construire.</p>
+            </div>
+            <p className="text-2xl md:text-3xl font-bold tracking-tight leading-snug pt-2">
+              Nous ne concevons pas d'abord des objets. <span className="text-gray-500 italic">Nous concevons cette couche.</span>
             </p>
           </div>
-
-          <div className="relative">
-            <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-extrabold tracking-tighter leading-[0.85] text-balance text-black mt-12 mb-8 p-0">
-              Vous êtes le moteur de votre entreprise. C'est exactement le problème.
-            </h1>
-
-            <div className="max-w-2xl mr-auto mt-8 p-0">
-              <p className="text-xl md:text-2xl text-[#8E9AAF] font-medium leading-relaxed italic m-0 p-0">
-                Vous avez les bonnes personnes. Nous concevons le cadre qui les libère
-              </p>
-            </div>
-
-            <div className="flex justify-start gap-6 items-center mt-12">
-              <Link 
-                to="/unique-offer-v2" 
-                className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
-              >
-                DÉCOUVRIR LE LAB NATIF <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Hero Image Container */}
-        <div className="mt-24 overflow-hidden rounded-[3rem] bg-white flex items-center justify-center p-8 md:p-20 border border-gray-100 shadow-sm relative group">
-          <img 
-            src="https://image.noelshack.com/fichiers/2026/05/4/1769699586-home-bg.png" 
-            alt="S9 Studio - Human Grid Protocol" 
-            className="w-full max-h-[70vh] object-contain group-hover:scale-[1.03] transition-transform duration-1000 ease-out"
-            referrerPolicy="no-referrer"
-          />
         </div>
       </section>
 
-      {/* 2. LE CONSTAT (MIROIR DES DOULEURS) */}
-      <section className="bg-black text-white py-32 mt-20 rounded-[4rem] mx-4 md:mx-10 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-5 space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400">
-                <AlertTriangle size={14} className="text-white" /> Le Constat
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight">
-                Votre entreprise est lente parce que tout dépend de vous.
-              </h2>
-              <p className="text-xl text-gray-400 leading-relaxed font-light italic">
-                Vous êtes le goulot d'étranglement de votre propre croissance. Sans système dédié, chaque projet finit sur votre bureau, vos idées stagnent et vos talents s'essoufflent.
-              </p>
-            </div>
-
-            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-1 gap-6">
-              {[
-                {
-                  title: "Trop lent pour le marché, trop vite pour l'équipe",
-                  desc: "Vous avez une idée. Elle circule en réunion pendant trois semaines. Quand elle sort enfin, le marché a déjà bougé.",
-                  icon: <Clock size={24} />,
-                  leak: "Retard Stratégique"
-                },
-                {
-                  title: "L'accord silencieux qui enterre les projets",
-                  desc: "Une bonne idée émerge en réunion. Tout le monde acquiesce. Deux semaines après, personne ne l'a portée. Elle a disparu sans que personne ne sache pourquoi.",
-                  icon: <Coins size={24} />,
-                  leak: "Dépendance Financière"
-                },
-                {
-                  title: "Bons individuellement. Bloqués collectivement.",
-                  desc: "Vos collaborateurs sont bons dans leur domaine. Mais dès qu'il s'agit de créer ensemble, quelque chose coince. Le collectif ne produit pas ce que les individus promettent.",
-                  icon: <UserMinus size={24} />,
-                  leak: "Épuisement du Leader"
-                }
-              ].map((item, i) => (
-                <div key={i} className="group p-8 md:p-12 rounded-[2.5rem] bg-white/5 border border-white/10 hover:border-white/30 transition-all flex flex-col md:flex-row gap-8 items-start">
-                  <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                    {item.icon}
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
-                      <span className="text-[9px] font-bold uppercase tracking-widest px-3 py-1 bg-white text-black rounded-full">{item.leak}</span>
-                    </div>
-                    <p className="text-gray-400 leading-relaxed italic">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        {/* Decorative background element */}
-        <div className="absolute -bottom-20 -right-20 opacity-10 pointer-events-none select-none">
-          <span className="font-logo text-[40vw] font-black leading-none">§</span>
-        </div>
-      </section>
-
-      {/* 2.5 LA MUTATION */}
-      <section className="container mx-auto px-6 py-40 bg-surface">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-8 space-y-12">
-            <div className="space-y-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted flex items-center gap-3">
-                <TrendingUp size={14} /> Le Diagnostic
-              </span>
-              <h2 className="text-5xl md:text-[6rem] font-bold tracking-tighter leading-[0.9] text-black">
-                Votre organisation n'a pas été conçue pour créer sans vous.
-                </h2>
-            </div>
-            
-            <div className="max-w-3xl space-y-8">
-              <p className="text-2xl md:text-3xl text-muted font-light leading-relaxed italic">
-                          Ce n'est pas un problème de talent. C'est un problème de conception. S9 intervient exactement là.
-
-              </p>
-            </div>
-          </div>
-          
-          <div className="lg:col-span-4 flex justify-center lg:justify-end">
-             <div className="relative">
-                <div className="w-64 h-64 rounded-full border border-gray-200 flex items-center justify-center animate-pulse">
-                   <span className="font-logo text-9xl font-black">§</span>
-                </div>
-                <div className="absolute -top-4 -right-4 bg-black text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                  OS V1.0
-                </div>
-             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. LES 3 MODULES DE L'OFFRE (ARCHITECTURE UNIQUE OFFER) */}
-      <section className="container mx-auto px-6 py-32">
-        <div className="mb-20">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">La capacité de créer, installée dans vos murs.</span>
-          <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight">Trois modules distincts. Un seul objectif : que votre organisation innove sans vous.</h2>
-        </div>
-
-        <div className="relative">
-          {/* Connecting Line */}
-          <div className="hidden md:block absolute top-[80px] left-[10%] right-[10%] h-[4px] bg-black/30 z-0" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
-            {[
-              {
-                id: "01",
-                title: "La Creative Room",
-                subtitle: "L'espace physique et digital dédié à la création dans vos murs.",
-                desc: "Vos équipes ont un lieu protégé de l'opérationnel conçu pour que les idées émergent, se testent et avancent.",
-                result: "Diagnostic + installation + configuration.",
-                impact: "Une durée adaptée à votre structure.",
-                icon: <Box className="w-10 h-10" />,
-                cta: "Installer ma Creative Room"
-              },
-              {
-                id: "02",
-                title: "La Méthode",
-                subtitle: "Les rituels et processus qui transforment vos équipes en créateurs autonomes.",
-                desc: "Vos collaborateurs savent comment avancer, décider et créer ensemble sans attendre votre validation.",
-                result: "Accompagnement et formation transmis.",
-                impact: "Jusqu'à ce que vos équipes n'en aient plus besoin.",
-                icon: <Workflow className="w-10 h-10" />,
-                cta: "Découvrir la Méthode"
-              },
-              {
-                id: "03",
-                title: "Le Sprint",
-                subtitle: "Le premier projet stratégique piloté ensemble pour que vos équipes sachent continuer seules.",
-                desc: "Un livrable concret sorti en temps record. Et une équipe qui sait reproduire le processus sans vous.",
-                result: "Ateliers de facilitation + transmission des outils.",
-                impact: "S9 s'efface quand la machine tourne.",
-                icon: <Zap className="w-10 h-10" />,
-                cta: "Lancer mon Sprint"
-              }
-            ].map((module, i) => (
-              <div key={i} className="group p-12 bg-white border border-gray-100 rounded-[3rem] hover:border-black transition-all flex flex-col justify-between h-full shadow-sm hover:shadow-xl">
-                <div className="space-y-8">
-                  <div className="flex justify-between items-center">
-                    <div className="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center text-black shadow-sm group-hover:bg-black group-hover:text-white transition-all">
-                      {module.icon}
-                    </div>
-                    <span className="text-4xl font-black text-gray-100 group-hover:text-black transition-colors">{module.id}</span>
-                  </div>
-                  <div className="space-y-4">
-                    <h3 className="text-3xl font-bold tracking-tight">{module.title}</h3>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted">{module.subtitle}</p>
-                    <p className="text-muted leading-relaxed italic">{module.desc}</p>
-                  </div>
-                </div>
-                
-                <div className="mt-12 pt-8 border-t border-gray-50 space-y-6">
-                  <div className="space-y-4">
-                    <p className="text-sm"><strong>Le résultat :</strong> <span className="italic text-muted">{module.result}</span></p>
-                    <p className="text-sm"><strong>L’impact :</strong> <span className="italic text-black font-bold">{module.impact}</span></p>
-                  </div>
-                  
-                  <Link 
-                    to="/unique-offer-v2" 
-                    className="flex items-center justify-between w-full px-6 py-4 bg-surface rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all group/btn"
-                  >
-                    {module.cta} <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20 flex justify-center">
-          <Link 
-            to="/unique-offer-v2" 
-            className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-xl"
-          >
-            DÉCOUVRIR L'OFFRE COMPLÈTE <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-          </Link>
-        </div>
-      </section>
-
-      {/* 6. À QUI NOUS NOUS ADRESSONS (EST-CE POUR VOUS ?) */}
+      {/* 3. L'ÉCHELLE */}
       <section className="container mx-auto px-6 py-40">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-5 lg:sticky lg:top-32">
-             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-4">Qualification</span>
-             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-none mb-8">Est-ce pour vous ?</h2>
-             <p className="text-xl text-muted font-light leading-relaxed max-w-sm">
-               Si vous vous reconnaissez dans l'un de ces trois profils, vous êtes exactement là où S9 intervient.
-             </p>
-          </div>
-          <div className="md:col-span-7 space-y-6">
-             {[
-               {
-                 title: "Le Moteur",
-                 desc: "Tout repose sur votre énergie. Sans votre présence, rien ne sort. Vous êtes le moteur et vous commencez à sentir que c'est exactement le problème.",
-                 icon: <Flame size={24} />
-               },
-               {
-                 title: "L'Éclaireur",
-                 desc: "Vous voyez où aller. Vous avez ouvert la voie. Mais quand vous regardez derrière vous, vos équipes n'ont pas les outils pour suivre sans vous.",
-                 icon: <FastForward size={24} />
-               },
-               {
-                 title: "L'Architecte",
-                 desc: "Vous savez exactement ce qui ne fonctionne pas. Vous avez même les solutions en tête. Ce qui manque : le cadre pour que les autres construisent avec vous.",
-                 icon: <Shield size={24} />
-               }
-             ].map((persona, idx) => (
-               <div key={idx} className="group p-10 border border-gray-100 rounded-[2.5rem] bg-white hover:border-black transition-all space-y-6">
-                  <div className="flex justify-between items-start">
-                    <div className="w-14 h-14 rounded-2xl bg-surface flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all">
-                      {persona.icon}
-                    </div>
-                    <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <CheckCircle2 size={16} className="text-black" />
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold tracking-tighter">{persona.title}</h3>
-                    <p className="text-lg text-muted italic leading-relaxed">{persona.desc}</p>
-                  </div>
-               </div>
-             ))}
-          </div>
+        <div className="max-w-3xl space-y-5 mb-16">
+          <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95]">
+            La même question, à toutes les échelles.
+          </h2>
+          <p className="text-xl text-muted font-medium italic leading-relaxed">
+            Qu'est-ce qui permet à des personnes de créer ensemble, durablement ?
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SCALES.map((s, i) => (
+            <motion.article
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group p-9 bg-white dark:bg-neutral-950 border border-gray-100 dark:border-neutral-900 rounded-4xl hover:border-black dark:hover:border-white transition-all flex flex-col gap-6 min-h-[18rem]"
+            >
+              <span className="w-14 h-14 rounded-2xl bg-surface dark:bg-neutral-900 flex items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
+                {s.icon}
+              </span>
+              <h3 className="text-2xl font-bold tracking-tight">{s.title}</h3>
+              <p className="text-muted leading-relaxed">{s.body}</p>
+            </motion.article>
+          ))}
         </div>
       </section>
 
-      {/* 7. CITATION */}
-      <section className="bg-black text-white py-60 relative overflow-hidden flex items-center justify-center">
-        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-          <motion.blockquote 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl md:text-7xl font-light italic leading-tight tracking-tighter"
-          >
-            “Notre travail est réussi quand il devient invisible ; quand votre organisation crée sans nous.”
-          </motion.blockquote>
+      {/* 4. CONVICTIONS */}
+      <section className="container mx-auto px-6 pb-40">
+        <div className="max-w-3xl space-y-5 mb-16">
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Convictions</span>
+          <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95]">
+            Cinq idées qui guident notre travail.
+          </h2>
         </div>
-        <div className="absolute inset-0 opacity-15 flex items-center justify-center select-none pointer-events-none">
-          <span className="font-logo text-[40vw] font-black leading-none">§</span>
+        <div className="flex flex-col gap-5">
+          {CONVICTIONS.map((c, i) => (
+            <motion.article
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group p-8 md:p-10 bg-white dark:bg-neutral-950 border border-gray-100 dark:border-neutral-900 rounded-4xl hover:border-black dark:hover:border-white transition-all grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 items-start"
+            >
+              <span className="md:col-span-2 text-4xl font-black text-gray-200 dark:text-neutral-800 group-hover:text-black dark:group-hover:text-white transition-colors">
+                {c.num}
+              </span>
+              <div className="md:col-span-10 space-y-3">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{c.title}</h3>
+                <p className="text-muted leading-relaxed max-w-3xl">{c.body}</p>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </section>
 
-      {/* 8. CTA FINAL */}
-      <section className="container mx-auto px-6 py-20 pb-32">
-        <div className="bg-white rounded-[4rem] p-12 md:p-32 text-center border border-gray-100 shadow-2xl relative overflow-hidden">
-          <div className="relative z-10 space-y-12">
-            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight max-w-4xl mx-auto">
-              Le premier pas ne prend pas 12 semaines. Il prend 45 minutes.
+      {/* 5. CE QUE NOUS CONSTRUISONS */}
+      <section className="container mx-auto px-6 py-40 border-t border-gray-100 dark:border-neutral-900">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div className="lg:col-span-5">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block mb-5">Ambition</span>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95]">
+              Un studio, et une pratique à partager.
             </h2>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a 
-                href="mailto:meet.section9@gmail.com" 
-                className="group flex items-center gap-6 px-10 py-5 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
-              >
-                Contactez S9 <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </a>
-              <a 
-                href="https://calendly.com/meet-section9/30min"
+          </div>
+          <div className="lg:col-span-7 space-y-6 text-lg md:text-xl text-muted leading-relaxed">
+            <p>S9 réunit des designers, des praticiens et des chercheurs autour d'une même question. Nous initions nos propres projets, nous accompagnons des organisations, et nous ouvrons des espaces de discussion sur la façon dont on crée ensemble.</p>
+            <p className="text-black dark:text-white font-medium">Notre désir : faire de cette approche une pratique partagée. Pas une méthode réservée à quelques spécialistes, mais une manière de penser accessible à toute équipe, tout lieu, tout collectif qui veut se donner les moyens de créer.</p>
+            <p>Ce studio évoluera avec les projets qu'il accueille. Comme les cadres que nous concevons.</p>
+            <p className="pt-4 text-sm text-muted border-t border-gray-100 dark:border-neutral-900">
+              Ce champ porte un nom : le <span className="font-bold text-black dark:text-white">meta-design</span>. Concevoir les conditions plutôt que les solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. PROJETS EN COURS */}
+      <section id="projets" className="bg-white dark:bg-neutral-950 border-y border-gray-100 dark:border-neutral-900 scroll-mt-28">
+        <div className="container mx-auto px-6 py-40">
+          <div className="max-w-3xl space-y-5 mb-16">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted block">Initiés par le studio</span>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95]">
+              Projets en cours
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PROJECTS.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-6 px-10 py-5 border-2 border-black text-black rounded-full font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all"
+                className="group p-10 bg-surface dark:bg-black border border-gray-100 dark:border-neutral-900 rounded-5xl hover:border-black dark:hover:border-white transition-all flex flex-col justify-between min-h-[20rem]"
               >
-                Prendre un rendez-vous <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                <div className="flex items-start justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted">{`Projet 0${i + 1}`}</span>
+                  <span className="w-10 h-10 rounded-full border border-gray-200 dark:border-neutral-800 flex items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
+                    <ArrowUpRight size={16} />
+                  </span>
+                </div>
+                <div className="space-y-3">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tighter">{p.name}</h3>
+                  <p className="text-muted leading-relaxed italic">{p.description}</p>
+                </div>
               </a>
-            </div>
+            ))}
           </div>
-          <div className="absolute -bottom-20 -right-20 w-[40vw] h-[40vw] bg-gray-50 rounded-full blur-[100px] opacity-30"></div>
+          <div className="mt-10">
+            <Link
+              to="/projets"
+              className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:underline underline-offset-4"
+            >
+              Voir tous les projets <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* 7. DEUX TERRAINS — où commencer */}
+      <section className="bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05] flex items-center justify-center select-none pointer-events-none" aria-hidden="true">
+          <span className="font-logo text-[50vw] font-black leading-none">§</span>
+        </div>
+        <div className="relative container mx-auto px-6 py-40">
+          <div className="max-w-3xl mx-auto text-center space-y-5 mb-16">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 block">Par où commencer</span>
+            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95]">
+              Vous dirigez une organisation, ou vous faites vivre un lieu ?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+              Deux terrains, une même pratique. Selon qui vous êtes, le point d'entrée change. La démarche, non.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Link
+              to="/organisations"
+              className="group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white hover:text-black transition-all flex flex-col justify-between min-h-[16rem]"
+            >
+              <div className="space-y-3">
+                <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight">Organisations &amp; équipes</h3>
+                <p className="text-gray-400 group-hover:text-gray-600 leading-relaxed transition-colors">
+                  Libérer le temps de vos équipes, puis installer durablement leur capacité à créer ensemble.
+                </p>
+              </div>
+              <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
+                Découvrir l'offre <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+            <Link
+              to="/lieux"
+              className="group p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white hover:text-black transition-all flex flex-col justify-between min-h-[16rem]"
+            >
+              <div className="space-y-3">
+                <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight">Lieux, collectifs &amp; quartiers</h3>
+                <p className="text-gray-400 group-hover:text-gray-600 leading-relaxed transition-colors">
+                  Faire communauté autour de votre mission et, si vous le désirez, devenir un point de rencontre pour votre quartier.
+                </p>
+              </div>
+              <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
+                Découvrir le Dispositif <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

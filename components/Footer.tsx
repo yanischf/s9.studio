@@ -18,8 +18,11 @@ const Footer: React.FC = () => {
           </span>
         </div>
 
-        <nav className="flex items-center gap-8">
-          <Link to="/about" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Manifeste</Link>
+        <nav className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+          <Link to="/lieux" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Lieux &amp; collectifs</Link>
+          <Link to="/organisations" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Organisations</Link>
+          <Link to="/toolkit" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Toolkit</Link>
+          <Link to="/about" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">À propos</Link>
           <a href="mailto:meet.section9@gmail.com" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">Contact</a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted hover:text-black transition-colors">LinkedIn</a>
         </nav>

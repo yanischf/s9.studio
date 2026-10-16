@@ -34,7 +34,7 @@ const teamMembers = [
   {
     name: "Johann Milani",
     role: "Directeur Artistique, Designer d’Experience",
-    description: "Johann conçoit les espaces où les esprits et les corps entrent en création. Avec 20 ans d'expérience en direction artistique et 15 ans en tant que fondateur d'espaces de travail, il a façonné des dizaines d'environnements à Lyon et Paris — concept stores, espaces de coworking, salles de réunion, lieux de programmation culturelle. Fondateur de Ballad.club : 2 cafés, 4 espaces de coworking, 10 salles de réunion, plus de 1000 membres.",
+    description: "Johann conçoit les espaces où les esprits et les corps entrent en création. Avec 20 ans d'expérience en direction artistique et 15 ans en tant que fondateur d'espaces de travail, il a façonné des dizaines d'environnements à Lyon et Paris : concept stores, espaces de coworking, salles de réunion, lieux de programmation culturelle. Fondateur de Ballad.club : 2 cafés, 4 espaces de coworking, 10 salles de réunion, plus de 1000 membres.",
     image: "https://image.noelshack.com/fichiers/2026/15/4/1775725404-jojo.jpeg",
     socials: {
       linkedin: "#",
@@ -45,7 +45,7 @@ const teamMembers = [
     name: "Yanis Cherfaoui",
     role: "Responsable Innovation, Meta Designer",
     description: "Yanis intervient là où se fabriquent les décisions, les idées, les tensions, avant que les solutions existent. Avec 15 ans d'expérience dans la création de solutions numériques et 10 ans dans l'application des méthodes Design auprès de groupes projets, il conçoit les cadres qui permettent aux équipes de penser, décider et créer ensemble. Ancré dans la pratique du meta-design, il construit des dispositifs ouverts que les équipes peuvent s'approprier et transformer durablement après son passage.",
-    image: "https://image.noelshack.com/fichiers/2026/15/4/1775725420-moi.jpg",
+    image: "/team/yanis.jpg",
     socials: {
       linkedin: "#",
       twitter: "#",
@@ -79,7 +79,7 @@ const About: React.FC = () => {
       <section className="bg-surface py-32 rounded-[5rem] mx-4 md:mx-10 mb-40 overflow-hidden">
         <h2 className="sr-only">Pourquoi Section9 ?</h2>
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="max-w-3xl">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -104,26 +104,6 @@ const About: React.FC = () => {
                 </p>
               </div>
             </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" 
-                  alt="Collaboration S9" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-              <div className="absolute -bottom-10 -right-10 bg-black text-white p-10 rounded-[2rem] hidden md:block max-w-xs shadow-2xl">
-                <p className="text-sm italic font-light">
-                  "L'autonomie n'est pas l'absence de règles, c'est la présence d'un cadre qui autorise l'initiative."
-                </p>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -139,12 +119,9 @@ const About: React.FC = () => {
                 Les visages derrière le système.
               </h2>
             </div>
-            <p className="text-xl text-muted font-light italic max-w-sm">
-              Un mélange de stratèges, créatifs et technologues unis par une même vision.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 px-4 lg:px-20 pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 px-0 lg:px-4 pb-32">
             {teamMembers.map((member, i) => (
               <motion.div 
                 key={i}
@@ -189,12 +166,9 @@ const About: React.FC = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-black text-white rounded-[4rem] p-12 md:p-32 relative overflow-hidden shadow-2xl"
+          className="bg-black text-white rounded-[4rem] p-12 md:py-20 md:px-16 relative overflow-hidden shadow-2xl"
         >
-          <div className="relative z-10 space-y-12">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] max-w-4xl mx-auto">
-              Prêt à concevoir les conditions de votre réussite ?
-            </h2>
+          <div className="relative z-10">
             <div className="flex justify-center">
               <a 
                 href="mailto:meet.section9@gmail.com" 

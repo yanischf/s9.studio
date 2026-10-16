@@ -308,7 +308,7 @@ const Home2: React.FC = () => {
             </h2>
             <div className="flex flex-col items-center gap-6">
               <Link 
-                to="/offres" 
+                to="/" 
                 className="group flex items-center gap-6 px-12 py-6 bg-white text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
               >
                 Voir nos solutions <ArrowRight size={20} />

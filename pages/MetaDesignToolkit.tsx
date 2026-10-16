@@ -33,7 +33,7 @@ const MetaDesignToolkit: React.FC = () => {
               Ressources
             </span>
             <p className="text-xs text-[#8E9AAF] font-medium leading-relaxed max-w-xs uppercase tracking-widest">
-              L'arsenal méthodologique du studio — Pensé pour la systémique.
+              L'arsenal méthodologique du studio. Pensé pour la systémique.
             </p>
           </div>
           <div className="md:col-span-8 text-right">

@@ -131,7 +131,7 @@ const ToolkitDetail: React.FC = () => {
           <div className="lg:col-span-8 space-y-12">
             <div className="flex justify-between items-end mb-8">
               <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">Étapes détaillées</h2>
-              <span className="text-[10px] font-bold text-muted uppercase tracking-widest">Protocol — v1.0</span>
+              <span className="text-[10px] font-bold text-muted uppercase tracking-widest">Protocol v1.0</span>
             </div>
             
             <div className="space-y-4">
@@ -162,7 +162,7 @@ const ToolkitDetail: React.FC = () => {
             <ul className="space-y-4">
               {tool.tips.map((tip, i) => (
                 <li key={i} className="flex gap-3 text-sm text-muted italic">
-                  <span>—</span> {tip}
+                  <span>•</span> {tip}
                 </li>
               ))}
             </ul>

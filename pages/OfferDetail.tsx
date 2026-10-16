@@ -24,11 +24,11 @@ const OfferDetail: React.FC = () => {
     <div className="pt-24 bg-surface dark:bg-black">
       {/* BACK BUTTON */}
       <div className="container mx-auto px-6 pt-10">
-        <Link 
-          to="/" 
+        <Link
+          to="/organisations"
           className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-muted hover:text-black dark:hover:text-white transition-colors"
         >
-          <ArrowLeft size={16} /> Retour à l'accueil
+          <ArrowLeft size={16} /> Retour à l'accompagnement
         </Link>
       </div>
 

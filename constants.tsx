@@ -21,7 +21,7 @@ import { Offer, EventItem, Value, ToolkitItem } from './types';
 export const OFFERS: Offer[] = [
   {
     id: 'design-environments',
-    title: 'Design Environments — Créez les conditions de la créativité',
+    title: 'Design Environments : Créez les conditions de la créativité',
     shortDescription: 'Analysez vos environnements pour construire un cadre qui permet aux équipes de collaborer et de concrétiser leurs idées.',
     problem: 'Vos équipes ont des idées, mais elles restent en silo. Les méthodes et l’espace de travail ne favorisent pas la collaboration, et la créativité stagne.',
     solution: 'Nous analysons vos environnements, méthodes et cultures pour construire un cadre qui permet aux équipes de collaborer et de concrétiser leurs idées.',
@@ -33,7 +33,7 @@ export const OFFERS: Offer[] = [
   },
   {
     id: 'meta-design-sprint',
-    title: 'Meta-Design Sprint™ — Concevez le cadre avant le projet',
+    title: 'Meta-Design Sprint™ : Concevez le cadre avant le projet',
     shortDescription: 'Atelier intensif pour définir rôles, processus et règles de collaboration avant de démarrer.',
     problem: 'Les projets avancent lentement : rôles flous, décisions bloquées, méthodes inefficaces.',
     solution: 'Atelier intensif pour définir rôles, processus et règles de collaboration avant de démarrer. Le cadre permet à l’équipe de travailler de manière fluide et efficace.',
@@ -45,7 +45,7 @@ export const OFFERS: Offer[] = [
   },
   {
     id: 'design-operating-systems',
-    title: 'Design Operating Systems — Structurez la création sur le long terme',
+    title: 'Design Operating Systems : Structurez la création sur le long terme',
     shortDescription: 'Nous construisons un système complet : rituels, processus, gouvernance et outils pour rendre vos équipes autonomes et efficaces.',
     problem: 'Le design dépend d’experts externes, les méthodes sont incohérentes, l’équipe peine à être autonome.',
     solution: 'Nous construisons un système complet : rituels, processus, gouvernance et outils pour rendre vos équipes autonomes et efficaces.',
@@ -57,7 +57,7 @@ export const OFFERS: Offer[] = [
   },
   {
     id: 'collective-intelligence-design',
-    title: 'Foresight & Intelligence Collective — Faites converger les talents',
+    title: 'Foresight & Intelligence Collective : Faites converger les talents',
     shortDescription: 'Explorer les futurs possibles, créer une vision partagée et activer des dynamiques stratégiques concrètes.',
     problem: 'Projets multi-acteurs : les silos freinent la décision et dispersent les contributions créatives.',
     solution: 'Nous orchestrons vos dynamiques collectives par le design de dispositifs sur mesure. Notre approche permet de synchroniser les expertises et de faire émerger des solutions partagées face à la complexité.',
@@ -69,7 +69,7 @@ export const OFFERS: Offer[] = [
   },
   {
     id: 'foresight-studio',
-    title: 'Foresight Studio — Prototyper les futurs',
+    title: 'Foresight Studio : Prototyper les futurs',
     shortDescription: 'Nous créons des scénarios prospectifs et prototypes pour tester et visualiser l’impact des décisions avant qu’elles ne deviennent critiques.',
     problem: 'Vous devez anticiper l’avenir mais manquez de visibilité sur les scénarios et impacts. Les choix stratégiques sont risqués.',
     solution: 'Nous créons des scénarios prospectifs et prototypes pour tester et visualiser l’impact des décisions avant qu’elles ne deviennent critiques.',
@@ -81,7 +81,7 @@ export const OFFERS: Offer[] = [
   },
   {
     id: 's9-studio-global',
-    title: 'S9 Studio — Des projets concrets et cohérents',
+    title: 'S9 Studio : Des projets concrets et cohérents',
     shortDescription: 'Nous concevons des projets complets et intégrés, testés dans le réel et livrés avec un cadre pour que vos équipes puissent continuer à les faire évoluer.',
     problem: 'Vos idées restent sur le papier ou manquent de cohérence entre objets, services, espaces et expériences. Les équipes ne savent pas comment les concrétiser.',
     solution: 'Nous concevons des projets complets et intégrés, testés dans le réel et livrés avec un cadre pour que vos équipes puissent continuer à les faire évoluer.',
@@ -181,7 +181,7 @@ export const EVENTS: EventItem[] = [
   {
     id: '1',
     title: 'Meta-Design #1. Concevoir les conditions du design',
-    date: 'Jeudi 4 Décembre 2025 — 18:30',
+    date: 'Jeudi 4 Décembre 2025 à 18:30',
     location: 'Le Hasard Ludique, Paris',
     description: 'Premier volet de nos rencontres sur les fondements du meta-design et la structuration des environnements créatifs.',
     isPast: true
@@ -204,3 +204,16 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
   GitBranch: <GitBranch className="w-8 h-8" />,
   Sprout: <Sprout className="w-8 h-8" />
 };
+
+export interface ProjectItem {
+  name: string;
+  url: string;
+  description: string;
+  logo?: string;
+}
+
+export const PROJECTS: ProjectItem[] = [
+  { name: 'Libre Cours', url: 'https://librecours.xyz', logo: '/logos/librecours.png', description: "Le temps d'une rencontre, dans un lieu de votre quartier, on échange des idées, des envies, des manières de voir le monde, avec des gens qui vivent à deux rues de chez vous. Pas besoin d'être expert, membre ou invité de quelqu'un. Habiter à côté suffit." },
+  { name: 'The Soci3ty', url: 'https://www.soci3ty.org/', logo: '/logos/soci3ty.svg', description: "The Soci3ty imagine un écosystème mondial et décentralisé où les individus et les communautés co-créent et possèdent la valeur qu'ils génèrent." },
+  { name: 'Clan OS', url: 'https://www.soci3ty.org/clan-os', description: "Clan OS transforme le pouvoir d'agir collectif en impact réel et en bénéfices partagés. C'est le système d'exploitation des dirigeants qui construisent avec leur communauté, et non à sa place." },
+];
