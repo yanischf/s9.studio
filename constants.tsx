@@ -210,10 +210,11 @@ export interface ProjectItem {
   url: string;
   description: string;
   logo?: string;
+  logoClassName?: string;
 }
 
 export const PROJECTS: ProjectItem[] = [
-  { name: 'Libre Cours', url: 'https://librecours.xyz', logo: '/logos/librecours.png', description: "Le temps d'une rencontre, dans un lieu de votre quartier, on échange des idées, des envies, des manières de voir le monde, avec des gens qui vivent à deux rues de chez vous. Pas besoin d'être expert, membre ou invité de quelqu'un. Habiter à côté suffit." },
+  { name: 'Libre Cours', url: 'https://librecours.xyz', logo: '/logos/librecours.png', logoClassName: 'h-36 w-auto max-w-full object-contain mx-auto', description: "Le temps d'une rencontre, dans un lieu de votre quartier, on échange des idées, des envies, des manières de voir le monde, avec des gens qui vivent à deux rues de chez vous. Pas besoin d'être expert, membre ou invité de quelqu'un. Habiter à côté suffit." },
   { name: 'The Soci3ty', url: 'https://www.soci3ty.org/', logo: '/logos/soci3ty.svg', description: "The Soci3ty imagine un écosystème mondial et décentralisé où les individus et les communautés co-créent et possèdent la valeur qu'ils génèrent." },
   { name: 'Clan OS', url: 'https://www.soci3ty.org/clan-os', description: "Clan OS transforme le pouvoir d'agir collectif en impact réel et en bénéfices partagés. C'est le système d'exploitation des dirigeants qui construisent avec leur communauté, et non à sa place." },
 ];

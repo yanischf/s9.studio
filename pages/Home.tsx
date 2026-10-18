@@ -231,7 +231,7 @@ const Home: React.FC = () => {
                         src={p.logo}
                         alt={p.name}
                         loading="lazy"
-                        className="h-14 md:h-16 w-auto max-w-full object-contain object-left"
+                        className={p.logoClassName ?? 'h-14 md:h-16 w-auto max-w-full object-contain object-left'}
                       />
                     ) : (
                       p.name

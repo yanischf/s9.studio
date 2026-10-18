@@ -44,7 +44,7 @@ const Projets: React.FC = () => {
                     src={p.logo}
                     alt={p.name}
                     loading="lazy"
-                    className="h-20 md:h-24 w-auto max-w-full object-contain object-left"
+                    className={p.logoClassName ?? 'h-20 md:h-24 w-auto max-w-full object-contain object-left'}
                   />
                 ) : (
                   <span className="font-display text-3xl md:text-4xl font-bold tracking-tighter">{p.name}</span>
