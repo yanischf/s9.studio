@@ -94,13 +94,13 @@ const About: React.FC = () => {
               </div>
               <div className="space-y-6 text-lg text-muted leading-relaxed">
                 <p>
-                  Trop souvent, l'innovation est déléguée à des tiers sans que l'organisation n'en tire un apprentissage durable. On achète une solution, mais on ne développe pas la capacité de la reproduire.
+                  Trop souvent, on cherche une solution sans regarder les conditions qui l'ont fait naître, ou qui l'empêchent d'exister. On obtient un résultat, mais rien ne change dans la manière de créer.
                 </p>
                 <p className="font-medium text-black">
-                  S9 est né d'un constat simple : la véritable souveraineté créative vient de la maîtrise de son propre environnement de travail.
+                  S9 est né d'un constat simple : ce que des personnes sont capables d'imaginer ensemble dépend directement de leur environnement. Les règles, les espaces, les rituels, la façon dont les décisions circulent.
                 </p>
                 <p>
-                  Nous ne venons pas pour "faire à votre place", mais pour concevoir avec vous le cadre, méthodes, outils, rituels  qui rendra votre équipe autonome et performante sur le long terme.
+                  C'est cette couche que nous concevons. Pas à la place de celles et ceux qui la vivent, mais avec eux. Pour qu'elle continue d'évoluer après notre passage.
                 </p>
               </div>
             </motion.div>
