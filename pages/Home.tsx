@@ -224,9 +224,20 @@ const Home: React.FC = () => {
                     <ArrowUpRight size={16} />
                   </span>
                 </div>
-                <div className="space-y-3">
-                  <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tighter">{p.name}</h3>
-                  <p className="text-muted leading-relaxed italic">{p.description}</p>
+                <div className="space-y-4">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tighter">
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        loading="lazy"
+                        className="h-14 md:h-16 w-auto max-w-full object-contain object-left"
+                      />
+                    ) : (
+                      p.name
+                    )}
+                  </h3>
+                  <p className="text-muted leading-relaxed italic line-clamp-4">{p.description}</p>
                 </div>
               </a>
             ))}
