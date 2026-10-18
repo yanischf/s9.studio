@@ -209,7 +209,7 @@ const Home: React.FC = () => {
               Projets en cours
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {PROJECTS.map((p, i) => (
               <a
                 key={i}
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
                 className="group p-10 bg-surface dark:bg-black border border-gray-100 dark:border-neutral-900 rounded-5xl hover:border-black dark:hover:border-white transition-all flex flex-col justify-between min-h-[20rem]"
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted">{`Projet 0${i + 1}`}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted">{p.name}</span>
                   <span className="w-10 h-10 rounded-full border border-gray-200 dark:border-neutral-800 flex items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
                     <ArrowUpRight size={16} />
                   </span>
