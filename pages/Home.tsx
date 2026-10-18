@@ -74,7 +74,7 @@ const Home: React.FC = () => {
               Nous concevons ce qui rend la création possible.
             </h1>
             <p className="text-xl md:text-2xl text-muted font-medium leading-relaxed max-w-2xl italic">
-              Une organisation, un lieu, un territoire, une communauté. Avant les solutions, il y a les conditions dans lesquelles elles naissent. C'est là que nous travaillons.
+              Une organisation, un lieu, un territoire, une communauté. Avant les solutions, il y a les conditions dans lesquelles elles naissent.
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
               <a
